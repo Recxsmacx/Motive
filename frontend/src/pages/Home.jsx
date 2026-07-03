@@ -7,6 +7,7 @@ import Footer from "@/components/layout/Footer";
 import CodeBlock from "@/components/shared/CodeBlock";
 import IconCard from "@/components/shared/IconCard";
 import IconDetailModal from "@/components/shared/IconDetailModal";
+import Sponsors from "@/components/shared/Sponsors";
 import { iconRegistry } from "@/registry/iconRegistry";
 import { TESTIDS } from "@/constants/testIds";
 
@@ -281,6 +282,9 @@ export default function Notifications() {
           </div>
         </div>
       </section>
+
+      {/* SPONSORS */}
+      <Sponsors />
 
       {/* OPEN SOURCE */}
       <section data-testid={TESTIDS.openSourceSection} className="py-24 border-t border-border">

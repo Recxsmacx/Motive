@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { Github, Sun, Moon, Search as SearchIcon, Menu as MenuIcon, X as XIcon } from "lucide-react";
+import { Github, Sun, Moon, Search as SearchIcon, Menu as MenuIcon, X as XIcon, Coffee } from "lucide-react";
 import { useTheme } from "@/context/ThemeContext";
 import { TESTIDS } from "@/constants/testIds";
 import AnimatedLoader from "@/components/icons/animations/AnimatedLoader";
@@ -85,6 +85,16 @@ export default function Navbar({ onSearchClick }) {
             >
               {theme === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
             </button>
+
+            <a
+              data-testid="nav-sponsor-btn"
+              href="/#sponsors"
+              className="hidden lg:inline-flex items-center gap-1.5 h-9 px-3 rounded-md border border-amber-400/30 bg-amber-400/10 hover:bg-amber-400/20 text-amber-300 text-xs font-medium transition-colors"
+              aria-label="Sponsor the project"
+            >
+              <Coffee className="w-3.5 h-3.5" />
+              Sponsor
+            </a>
 
             <a
               data-testid={TESTIDS.navGithubBtn}
