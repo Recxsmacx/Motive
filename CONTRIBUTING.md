@@ -14,9 +14,11 @@ cd motive
 # 2. Create a branch
 git checkout -b feat/animated-rocket
 
-# 3. Set up locally
-cd packages/motive-icons && yarn install && yarn build
-cd ../../frontend && yarn install && yarn start
+# 3. Set up locally (from repo root)
+./scripts/bootstrap.sh
+
+# 4. Start dev server
+cd frontend && yarn start
 # Site runs at http://localhost:3000
 ```
 

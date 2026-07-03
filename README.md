@@ -73,61 +73,87 @@ yarn --version   # 1.22.x
 
 ---
 
-## Quick start — run the website locally
+## Quick start — one command
+
+The website consumes the built `motive-icons` package tarball, so **the package must be built before the website is installed**. The bootstrap script handles the whole chain:
 
 ```bash
-# 1. Clone the repo
+# 1. Clone
 git clone https://github.com/YOUR_ORG/motive.git
 cd motive
 
-# 2. Install website dependencies
+# 2. Bootstrap everything (builds the package + installs the website)
+./scripts/bootstrap.sh
+
+# 3. Start the dev server
 cd frontend
-yarn install
-
-# 3. Configure environment
-cp .env.example .env      # or edit .env directly
-# Ensure REACT_APP_BACKEND_URL points to your backend
-# (only needed if you consume the placeholder FastAPI backend)
-
-# 4. Start the dev server
 yarn start
 ```
 
-The site is available at **http://localhost:3000**.
+The site is available at **http://localhost:3000**. Hot-reload is enabled — edits under `frontend/src/` refresh automatically.
 
-Hot-reload is enabled — edits to any file under `frontend/src/` refresh automatically.
+### What bootstrap does
+
+```
+[1/5] Installs motive-icons build tooling      (packages/motive-icons/)
+[2/5] Builds the package                        → dist/index.{js,cjs,d.ts}
+[3/5] Packs a fresh tarball                     → motive-icons-<v>.tgz
+[4/5] Copies the tarball into frontend/public/  (so it's downloadable)
+[5/5] Installs website dependencies             (frontend/ — creates .env from .env.example if missing)
+```
+
+### Manual install (if you don't want to use the script)
+
+```bash
+# 1. Build the package
+cd packages/motive-icons
+yarn install
+yarn build
+npm pack                                    # → motive-icons-0.1.0.tgz
+
+# 2. Publish the tarball for the site
+cp motive-icons-0.1.0.tgz ../../frontend/public/
+
+# 3. Install the website
+cd ../../frontend
+cp .env.example .env                         # only if you don't have one
+yarn install
+yarn start                                   # http://localhost:3000
+```
+
+> **Yarn Classic only** — `frontend/package.json` references the local package with the relative `file:../packages/motive-icons/motive-icons-0.1.0.tgz` protocol. npm's semantics for `file:` differ; use yarn.
 
 ---
 
 ## Working on the `motive-icons` package
 
-The website consumes the built tarball from `packages/motive-icons/`. When you edit any icon animation or the `IconShell`, you need to rebuild the package and re-install it in the website.
+The website consumes the built tarball at `frontend/public/motive-icons-<v>.tgz`. When you edit any icon animation or the `IconShell`, rebuild the package and re-install it into the site:
 
 ```bash
-# From repo root
+# From repo root — one command handles everything
+./scripts/bootstrap.sh
+```
+
+Or do it manually:
+
+```bash
+# 1. Rebuild the package
 cd packages/motive-icons
-
-# Install package build tooling
-yarn install
-
-# Build → produces dist/index.js (ESM) + dist/index.cjs (CJS) + dist/index.d.ts
 yarn build
+npm pack                                     # → motive-icons-<v>.tgz
 
-# Package a fresh tarball
-npm pack               # creates motive-icons-0.1.0.tgz
+# 2. Copy the fresh tarball into the site (so downloads + install stay in sync)
+cp motive-icons-*.tgz ../../frontend/public/
 
-# Copy tarball into the website so it's downloadable + installable
-cp motive-icons-0.1.0.tgz ../../frontend/public/
-
-# Install the fresh tarball into the website
+# 3. Force-reinstall in the website (yarn caches by content hash, so bump/pack again if unchanged)
 cd ../../frontend
 rm -rf node_modules/motive-icons
 yarn add file:../packages/motive-icons/motive-icons-0.1.0.tgz --force
 ```
 
-Then reload the dev server and your changes will be live.
+Reload the dev server and your changes are live.
 
-> Tip: for tight iteration cycles, you can also `yarn link` the package. Ask in the discussion tab if you want that flow.
+> Tip: for tighter iteration you can `yarn link` the package (`cd packages/motive-icons && yarn link`, then `cd frontend && yarn link motive-icons`). Undo with `yarn unlink`.
 
 ---
 
