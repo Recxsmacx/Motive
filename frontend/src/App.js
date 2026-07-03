@@ -1,55 +1,42 @@
 import { useEffect } from "react";
 import "@/App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import axios from "axios";
-import { HOME } from "@/constants/testIds";
+import { ThemeProvider } from "@/context/ThemeContext";
+import { Toaster } from "sonner";
+import Home from "@/pages/Home";
+import Icons from "@/pages/Icons";
+import Playground from "@/pages/Playground";
+import Docs from "@/pages/Docs";
+import NotFound from "@/pages/NotFound";
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
-
-const Home = () => {
-  const helloWorldApi = async () => {
-    try {
-      const response = await axios.get(`${API}/`);
-      console.log(response.data.message);
-    } catch (e) {
-      console.error(e, `errored out requesting / api`);
-    }
-  };
-
+function App() {
   useEffect(() => {
-    helloWorldApi();
+    document.title = "Motive — Icons that move with purpose";
   }, []);
 
   return (
-    <div>
-      <header className="App-header">
-        <a
-          data-testid={HOME.emergentLink}
-          className="App-link"
-          href="https://emergent.sh"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img src="https://avatars.githubusercontent.com/in/1201222?s=120&u=2686cf91179bbafbc7a71bfbc43004cf9ae1acea&v=4" />
-        </a>
-        <p className="mt-5">Building something incredible ~!</p>
-      </header>
-    </div>
-  );
-};
-
-function App() {
-  return (
-    <div className="App">
+    <ThemeProvider>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />}>
-            <Route index element={<Home />} />
-          </Route>
+          <Route path="/" element={<Home />} />
+          <Route path="/icons" element={<Icons />} />
+          <Route path="/playground" element={<Playground />} />
+          <Route path="/docs" element={<Docs />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
+        <Toaster
+          theme="dark"
+          position="bottom-right"
+          toastOptions={{
+            style: {
+              background: "#121214",
+              border: "1px solid rgba(255,255,255,0.08)",
+              color: "#fff",
+            },
+          }}
+        />
       </BrowserRouter>
-    </div>
+    </ThemeProvider>
   );
 }
 
