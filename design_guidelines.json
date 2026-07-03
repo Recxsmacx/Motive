@@ -1,0 +1,100 @@
+{
+  "theme": "dark",
+  "archetype": "Swiss & High-Contrast (Adapted for Dark Tech-Bro with Purple Accent)",
+  "rationale": "The design strictly follows the user's request for a 'Render.com backend hosting' visual theme. This requires a dark-first, premium developer-tool aesthetic: deep slate/black backgrounds, crisp sans-serif typography (Satoshi), structural grid-based layouts, and a signature vibrant violet/purple accent for primary actions and glowing focal points. We avoid heavy gradients in favor of restrained glows, 1px subtle borders, and precise alignment.",
+  "colors": {
+    "dark": {
+      "background": "#09090b",
+      "surface": "#121214",
+      "surface_hover": "#18181b",
+      "primary": "#8b5cf6",
+      "primary_hover": "#7c3aed",
+      "text_main": "#ffffff",
+      "text_muted": "#a1a1aa",
+      "border": "#27272a",
+      "border_hover": "#3f3f46",
+      "success": "#10b981",
+      "code_bg": "#0d0d12"
+    },
+    "light": {
+      "background": "#ffffff",
+      "surface": "#f4f4f5",
+      "surface_hover": "#e4e4e7",
+      "primary": "#7c3aed",
+      "primary_hover": "#6d28d9",
+      "text_main": "#09090b",
+      "text_muted": "#52525b",
+      "border": "#e4e4e7",
+      "border_hover": "#d4d4d8",
+      "success": "#059669",
+      "code_bg": "#f4f4f5"
+    }
+  },
+  "typography": {
+    "font_primary": "Satoshi, Inter, sans-serif",
+    "font_secondary": "Satoshi, Inter, sans-serif",
+    "font_code": "'JetBrains Mono', 'Fira Code', monospace",
+    "headings": {
+      "h1": "text-5xl sm:text-6xl font-bold tracking-tighter text-white",
+      "h2": "text-3xl sm:text-4xl font-semibold tracking-tight text-white",
+      "h3": "text-xl sm:text-2xl font-semibold tracking-tight text-white"
+    },
+    "body": {
+      "base": "text-base font-medium text-zinc-400 leading-relaxed",
+      "small": "text-sm font-medium text-zinc-500",
+      "label": "text-xs font-bold tracking-[0.1em] uppercase text-zinc-500"
+    }
+  },
+  "spacing_and_layout": {
+    "container": "max-w-7xl mx-auto px-6 sm:px-8 lg:px-12",
+    "section_padding": "py-24 sm:py-32",
+    "grid_bento": "grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6",
+    "grid_icon_gallery": "grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-px bg-zinc-800/50 p-px rounded-xl overflow-hidden"
+  },
+  "surface_styles": {
+    "header": "fixed top-0 left-0 right-0 z-50 bg-[#09090b]/80 backdrop-blur-xl border-b border-white/5",
+    "icon_card": "bg-[#121214] flex flex-col items-center justify-center p-6 aspect-square hover:bg-[#18181b] transition-colors duration-200 group cursor-pointer relative",
+    "modal_content": "bg-[#121214] border border-white/10 shadow-2xl rounded-xl",
+    "code_block": "bg-[#0d0d12] border border-white/10 rounded-lg p-4 font-mono text-sm overflow-x-auto",
+    "primary_button": "bg-violet-600 hover:bg-violet-700 text-white font-medium rounded-md px-6 py-2.5 transition-all duration-200 shadow-[0_0_15px_rgba(139,92,246,0.3)] hover:shadow-[0_0_25px_rgba(139,92,246,0.5)]"
+  },
+  "motion_and_interactions": {
+    "hover_state": "hover:bg-zinc-800/50 transition-colors duration-200",
+    "icon_wrapper_hover": "group-hover:scale-110 transition-transform duration-300 ease-out",
+    "focus_ring": "focus:outline-none focus:ring-2 focus:ring-violet-500/50 focus:border-violet-500",
+    "modal_enter": "animate-in fade-in zoom-in-95 duration-200"
+  },
+  "components": {
+    "icon_gallery": {
+      "strategy": "Avoid standard gap-based grids. Use a 1px border-collapse style. Container has a dark border background (`bg-zinc-800`), and children have solid background (`bg-zinc-950`). This creates a precise 1px tech grid that feels like a developer tool.",
+      "layout": "grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-px bg-white/5 border border-white/10 rounded-xl overflow-hidden"
+    },
+    "icon_detail_modal": {
+      "strategy": "Shadcn Dialog component, heavy customization. Split layout: left side shows the massive icon with live animation trigger, right side shows controls (Sliders for size, stroke, speed) and code preview block.",
+      "styles": "Dark background `#121214`, subtle border `#27272a`. Close button must be distinct."
+    },
+    "playground": {
+      "strategy": "Split screen layout `grid md:grid-cols-2`. Left panel: Interactive controls using customized Shadcn Sliders and Selects. Right panel: Live rendered icon and instantly updating syntax-highlighted code block.",
+      "styles": "Use monospace fonts heavily here. Make it look like a sleek IDE."
+    }
+  },
+  "media": {
+    "images": {
+      "hero_background": {
+        "url": "https://images.unsplash.com/photo-1689443111130-6e9c7dfd8f9e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Njl8MHwxfHNlYXJjaHwyfHxkYXJrJTIwYWJzdHJhY3QlMjBnZW9tZXRyaWMlMjB0ZWNoJTIwYmFja2dyb3VuZHxlbnwwfHx8fDE3ODMwOTA5NTV8MA&ixlib=rb-4.1.0&q=85",
+        "description": "Dark background with a subtle purple geometric design, used at low opacity (10-15%) with a radial mask to create depth behind the hero text."
+      }
+    }
+  },
+  "icons_library": {
+    "recommendation": "Use `lucide-react` for standard static representation. For the core value prop (animated icons), the agent should implement custom Framer Motion variants on SVG paths, demonstrating hover/tap/loop interactions."
+  },
+  "instructions_to_main_agent": [
+    "Install and use 'lucide-react' for baseline icons.",
+    "Install 'framer-motion' for all icon animations and page transitions.",
+    "Implement the layout with strict adherence to the tech-bro grid aesthetic: heavy use of 1px borders, subtle dark mode colors (#09090b, #121214), and exact purple accents (#8B5CF6).",
+    "All interactive elements MUST have `data-testid` attributes (e.g., `data-testid='icon-search-input'`).",
+    "The Hero section should feature an interactive grid of icons that animate automatically or on hover, showcasing the library's capability immediately.",
+    "Use standard HTML/Tailwind for the main page layout, but heavily customize Shadcn components (Dialog, Slider, Select, Tabs) for the interactive Modal and Playground."
+  ]
+}
