@@ -1,0 +1,37 @@
+// Barrel — every animated icon + core primitives.
+export { default as IconShell } from "./IconShell";
+export { useIconTrigger } from "./hooks/useIconTrigger";
+
+export { default as AnimatedBell } from "./animations/AnimatedBell";
+export { default as AnimatedHeart } from "./animations/AnimatedHeart";
+export { default as AnimatedSearch } from "./animations/AnimatedSearch";
+export { default as AnimatedSettings } from "./animations/AnimatedSettings";
+export { default as AnimatedTrash } from "./animations/AnimatedTrash";
+export { default as AnimatedDownload } from "./animations/AnimatedDownload";
+export { default as AnimatedUpload } from "./animations/AnimatedUpload";
+export { default as AnimatedMenu } from "./animations/AnimatedMenu";
+export { default as AnimatedX } from "./animations/AnimatedX";
+export { default as AnimatedPlus } from "./animations/AnimatedPlus";
+export { default as AnimatedCheck } from "./animations/AnimatedCheck";
+export { default as AnimatedArrowRight } from "./animations/AnimatedArrowRight";
+export { default as AnimatedArrowLeft } from "./animations/AnimatedArrowLeft";
+export { default as AnimatedArrowUp } from "./animations/AnimatedArrowUp";
+export { default as AnimatedArrowDown } from "./animations/AnimatedArrowDown";
+export { default as AnimatedRefresh } from "./animations/AnimatedRefresh";
+export { default as AnimatedEye } from "./animations/AnimatedEye";
+export { default as AnimatedLock } from "./animations/AnimatedLock";
+export { default as AnimatedMail } from "./animations/AnimatedMail";
+export { default as AnimatedSend } from "./animations/AnimatedSend";
+export { default as AnimatedHome } from "./animations/AnimatedHome";
+export { default as AnimatedUser } from "./animations/AnimatedUser";
+export { default as AnimatedCalendar } from "./animations/AnimatedCalendar";
+export { default as AnimatedClock } from "./animations/AnimatedClock";
+export { default as AnimatedStar } from "./animations/AnimatedStar";
+export { default as AnimatedBookmark } from "./animations/AnimatedBookmark";
+export { default as AnimatedCopy } from "./animations/AnimatedCopy";
+export { default as AnimatedExternalLink } from "./animations/AnimatedExternalLink";
+export { default as AnimatedPlay } from "./animations/AnimatedPlay";
+export { default as AnimatedPause } from "./animations/AnimatedPause";
+export { default as AnimatedVolume } from "./animations/AnimatedVolume";
+export { default as AnimatedWifi } from "./animations/AnimatedWifi";
+export { default as AnimatedLoader } from "./animations/AnimatedLoader";

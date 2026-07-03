@@ -1,6 +1,6 @@
 import { Github, Coffee, Heart, Building2, ArrowRight, Check } from "lucide-react";
 import { motion } from "framer-motion";
-import AnimatedHeart from "@/components/icons/animations/AnimatedHeart";
+import { AnimatedHeart } from "motive-icons";
 
 /**
  * Sponsors — three-tier support system:

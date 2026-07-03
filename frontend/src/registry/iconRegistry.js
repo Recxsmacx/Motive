@@ -1,42 +1,47 @@
 /**
- * Icon Registry — single source of truth. Adding a new animated icon:
- *   1. Create the animated component in components/icons/animations/AnimatedXxx.jsx
- *   2. Import it here and add an entry to the array below.
- *   3. It automatically appears in gallery, search, filters, and playground.
+ * Icon Registry — single source of truth. Powered by the real `motive-icons`
+ * npm package built from /app/packages/motive-icons.
+ *
+ * Adding a new animated icon:
+ *   1. Create the component in packages/motive-icons/src/animations/AnimatedXxx.jsx
+ *   2. Export it from packages/motive-icons/src/index.js
+ *   3. Add one entry below. It automatically appears in gallery, search, filters, playground.
  */
-import AnimatedBell from "@/components/icons/animations/AnimatedBell";
-import AnimatedHeart from "@/components/icons/animations/AnimatedHeart";
-import AnimatedSearch from "@/components/icons/animations/AnimatedSearch";
-import AnimatedSettings from "@/components/icons/animations/AnimatedSettings";
-import AnimatedTrash from "@/components/icons/animations/AnimatedTrash";
-import AnimatedDownload from "@/components/icons/animations/AnimatedDownload";
-import AnimatedUpload from "@/components/icons/animations/AnimatedUpload";
-import AnimatedMenu from "@/components/icons/animations/AnimatedMenu";
-import AnimatedX from "@/components/icons/animations/AnimatedX";
-import AnimatedPlus from "@/components/icons/animations/AnimatedPlus";
-import AnimatedCheck from "@/components/icons/animations/AnimatedCheck";
-import AnimatedArrowRight from "@/components/icons/animations/AnimatedArrowRight";
-import AnimatedArrowLeft from "@/components/icons/animations/AnimatedArrowLeft";
-import AnimatedArrowUp from "@/components/icons/animations/AnimatedArrowUp";
-import AnimatedArrowDown from "@/components/icons/animations/AnimatedArrowDown";
-import AnimatedRefresh from "@/components/icons/animations/AnimatedRefresh";
-import AnimatedEye from "@/components/icons/animations/AnimatedEye";
-import AnimatedLock from "@/components/icons/animations/AnimatedLock";
-import AnimatedMail from "@/components/icons/animations/AnimatedMail";
-import AnimatedSend from "@/components/icons/animations/AnimatedSend";
-import AnimatedHome from "@/components/icons/animations/AnimatedHome";
-import AnimatedUser from "@/components/icons/animations/AnimatedUser";
-import AnimatedCalendar from "@/components/icons/animations/AnimatedCalendar";
-import AnimatedClock from "@/components/icons/animations/AnimatedClock";
-import AnimatedStar from "@/components/icons/animations/AnimatedStar";
-import AnimatedBookmark from "@/components/icons/animations/AnimatedBookmark";
-import AnimatedCopy from "@/components/icons/animations/AnimatedCopy";
-import AnimatedExternalLink from "@/components/icons/animations/AnimatedExternalLink";
-import AnimatedPlay from "@/components/icons/animations/AnimatedPlay";
-import AnimatedPause from "@/components/icons/animations/AnimatedPause";
-import AnimatedVolume from "@/components/icons/animations/AnimatedVolume";
-import AnimatedWifi from "@/components/icons/animations/AnimatedWifi";
-import AnimatedLoader from "@/components/icons/animations/AnimatedLoader";
+import {
+  AnimatedBell,
+  AnimatedHeart,
+  AnimatedSearch,
+  AnimatedSettings,
+  AnimatedTrash,
+  AnimatedDownload,
+  AnimatedUpload,
+  AnimatedMenu,
+  AnimatedX,
+  AnimatedPlus,
+  AnimatedCheck,
+  AnimatedArrowRight,
+  AnimatedArrowLeft,
+  AnimatedArrowUp,
+  AnimatedArrowDown,
+  AnimatedRefresh,
+  AnimatedEye,
+  AnimatedLock,
+  AnimatedMail,
+  AnimatedSend,
+  AnimatedHome,
+  AnimatedUser,
+  AnimatedCalendar,
+  AnimatedClock,
+  AnimatedStar,
+  AnimatedBookmark,
+  AnimatedCopy,
+  AnimatedExternalLink,
+  AnimatedPlay,
+  AnimatedPause,
+  AnimatedVolume,
+  AnimatedWifi,
+  AnimatedLoader,
+} from "motive-icons";
 
 export const CATEGORIES = [
   "Navigation",

@@ -1,0 +1,45 @@
+{
+  "name": "motive-icons",
+  "version": "0.1.0",
+  "description": "Beautiful, hand-animated Lucide + Phosphor icons for React. Copy and ship.",
+  "keywords": ["react", "icons", "animated-icons", "framer-motion", "lucide", "phosphor", "svg"],
+  "license": "MIT",
+  "author": "Motive Contributors",
+  "homepage": "https://github.com/motive-icons/motive",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/motive-icons/motive.git"
+  },
+  "sideEffects": false,
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup && cp src/index.d.ts dist/index.d.ts",
+    "prepack": "yarn build"
+  },
+  "peerDependencies": {
+    "framer-motion": ">=10.0.0",
+    "react": ">=17.0.0",
+    "react-dom": ">=17.0.0"
+  },
+  "devDependencies": {
+    "tsup": "8.3.5",
+    "esbuild": "0.24.0",
+    "typescript": "5.6.3"
+  }
+}

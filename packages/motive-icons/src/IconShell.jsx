@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useIconTrigger } from "@/hooks/useIconTrigger";
+import { useIconTrigger } from "./hooks/useIconTrigger";
 
 /**
  * IconShell — universal wrapper.
