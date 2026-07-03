@@ -151,10 +151,13 @@ export default function Notifications() {
             transition={{ delay: 0.3, duration: 0.5 }}
             className="mt-16 relative rounded-2xl border border-border bg-[#0d0d12] dark:bg-[#0d0d12] overflow-hidden"
             data-testid={TESTIDS.heroShowcase}
+            id="showcase"
           >
+            <div data-testid={TESTIDS.showcaseSection} className="contents">
             <div className="absolute inset-0 bg-grid opacity-40 pointer-events-none" />
             <HeroGrid pointer={pointer} onSelect={setSelected} />
             <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#0d0d12] to-transparent pointer-events-none" />
+            </div>
           </motion.div>
         </div>
       </section>
@@ -213,7 +216,7 @@ export default function Notifications() {
                 trigger, adjust the props, and the animation just works.
               </p>
 
-              <div className="mt-8 flex items-center gap-1.5">
+              <div data-testid={TESTIDS.triggerSelector} className="mt-8 flex items-center gap-1.5">
                 <span className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground mr-2">
                   Trigger
                 </span>

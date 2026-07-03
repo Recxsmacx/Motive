@@ -39,13 +39,40 @@ const CLASS_MAP = {
 export default function CodeBlock({ code, language = "tsx", copyLabel = "Copy", testId, className = "" }) {
   const [copied, setCopied] = useState(false);
   const handleCopy = async () => {
-    try {
-      await navigator.clipboard.writeText(code);
+    const showSuccess = () => {
       setCopied(true);
       toast.success("Copied to clipboard");
       setTimeout(() => setCopied(false), 1600);
+    };
+    try {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(code);
+        showSuccess();
+        return;
+      }
+      throw new Error("clipboard unavailable");
     } catch {
-      toast.error("Copy failed");
+      // Fallback: hidden textarea + execCommand("copy") — works in iframes/insecure contexts.
+      try {
+        const ta = document.createElement("textarea");
+        ta.value = code;
+        ta.setAttribute("readonly", "");
+        ta.style.position = "fixed";
+        ta.style.top = "0";
+        ta.style.left = "0";
+        ta.style.opacity = "0";
+        document.body.appendChild(ta);
+        ta.select();
+        const ok = document.execCommand("copy");
+        document.body.removeChild(ta);
+        if (ok) {
+          showSuccess();
+        } else {
+          toast.error("Copy failed");
+        }
+      } catch {
+        toast.error("Copy failed");
+      }
     }
   };
 

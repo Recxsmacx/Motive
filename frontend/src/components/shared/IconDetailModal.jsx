@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, RotateCcw } from "lucide-react";
-import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Slider } from "@/components/ui/slider";
 import { Switch } from "@/components/ui/switch";
 import CodeBlock from "@/components/shared/CodeBlock";
@@ -63,6 +63,9 @@ export default function IconDetailModal({ icon, open, onOpenChange }) {
         className="max-w-4xl p-0 border-border bg-[#0f0f12] overflow-hidden [&>button]:hidden"
       >
         <DialogTitle className="sr-only">{icon.name} — animated icon details</DialogTitle>
+        <DialogDescription className="sr-only">
+          {icon.description} Interactive preview with size, stroke width, speed, loop and background controls, plus copy-able code.
+        </DialogDescription>
         <div className="grid grid-cols-1 md:grid-cols-[1.1fr_1fr]">
           {/* Preview */}
           <div className="relative border-b md:border-b-0 md:border-r border-border">
@@ -86,7 +89,7 @@ export default function IconDetailModal({ icon, open, onOpenChange }) {
               >
                 <RotateCcw className="w-3 h-3" /> Replay
               </button>
-              <div className="absolute top-3 right-3 flex items-center gap-1">
+              <div data-testid={TESTIDS.modalBgSwitch} className="absolute top-3 right-3 flex items-center gap-1">
                 {BGS.map((b) => (
                   <button
                     key={b.key}
