@@ -1,0 +1,40 @@
+{
+  "summary": "DevX/bootstrap regression testing. Ran bash /app/scripts/bootstrap.sh from a fully clean state (removed frontend/node_modules, packages/motive-icons/node_modules, dist, and all tarballs). Script completed with exit 0. All required artefacts produced. Frontend restarted via supervisor, compiled successfully. All 4 preview URLs return 200 with correct DOM content. Consumer install into scratch /tmp project produced working CJS bundle with exactly 35 exports (33 icons + IconShell + useIconTrigger).",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {"ui_bugs": [], "integration_issues": [], "design_issues": []},
+  "bootstrap_verification": {
+    "bootstrap_exit_code": 0,
+    "dist_files_present": ["index.js", "index.cjs", "index.d.ts"],
+    "tarball_at_package": "/app/packages/motive-icons/motive-icons-0.1.0.tgz (14432 bytes)",
+    "tarball_at_public": "/app/frontend/public/motive-icons-0.1.0.tgz (14432 bytes)",
+    "installed_module_present": "/app/frontend/node_modules/motive-icons/dist/index.js — 34 references to 'react/jsx-runtime'",
+    "frontend_env_created": true,
+    "package_json_uses_relative_path": "file:../packages/motive-icons/motive-icons-0.1.0.tgz — CONFIRMED (line 47)",
+    "env_example_present": true,
+    "env_example_has_backend_url": true
+  },
+  "url_checks": {
+    "GET /": "200, DOM contains 'Motive' (SPA-rendered, verified via Playwright)",
+    "GET /icons": "200, 33 [data-testid=icon-card] elements (>30 requirement met)",
+    "GET /docs": "200, 1 [data-testid=docs-download-tarball] anchor present",
+    "GET /motive-icons-0.1.0.tgz": "200, 14432 bytes binary (>10KB requirement met)"
+  },
+  "consumer_install_check": {
+    "scratch_dir": "/tmp/motive-consumer-check",
+    "yarn_add_result": "Done in 1.12s",
+    "node_smoke_test": "OK 35 (33 icons + IconShell + useIconTrigger)",
+    "AnimatedBell_is_function": true
+  },
+  "test_report_links": [],
+  "action_items": [],
+  "critical_code_review_comments": [
+    "bootstrap.sh runs `yarn build` explicitly and then `npm pack` which triggers prepack -> yarn build again (build runs twice, ~1s wasted). Non-blocking but could drop step [2/5] since prepack handles it.",
+    "frontend/.env.example points REACT_APP_BACKEND_URL to http://localhost:8001 but the actual /app/frontend/.env in this environment overrides to the preview URL, so that's fine for local dev but new users following README locally will need a running backend."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "100%", "frontend": "100%"},
+  "seed_data_creation": "None",
+  "retest_needed": false,
+  "should_main_agent_self_test": false,
+  "context_for_next_testing_agent": "Bootstrap flow is fully green. If revisiting, re-run: rm -rf /app/frontend/node_modules /app/packages/motive-icons/node_modules /app/packages/motive-icons/dist /app/packages/motive-icons/motive-icons-*.tgz /app/frontend/public/motive-icons-*.tgz && bash /app/scripts/bootstrap.sh. Consumer smoke: node -e in /tmp/motive-consumer-check should print 'OK 35'."
+}
