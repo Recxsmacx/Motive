@@ -54,7 +54,7 @@ export default function Home() {
   }, []);
 
   const codeSample = useMemo(() => {
-    return `import { AnimatedBell } from "motive-icons";
+    return `import { AnimatedBell } from "rex-motive";
 
 export default function Notifications() {
   return (
@@ -139,7 +139,7 @@ export default function Notifications() {
               </a>
               <div className="hidden sm:inline-flex items-center gap-2 pl-2 ml-1 text-xs font-mono text-muted-foreground">
                 <Terminal className="w-3.5 h-3.5" />
-                npm i motive-icons
+                npm i rex-motive
               </div>
             </motion.div>
           </div>

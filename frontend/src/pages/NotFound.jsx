@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import { AnimatedArrowLeft } from "motive-icons";
+import { AnimatedArrowLeft } from "rex-motive";
 
 export default function NotFound() {
   return (

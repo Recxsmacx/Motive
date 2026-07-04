@@ -1,4 +1,4 @@
-# motive-icons
+# rex-motive
 
 Beautiful, hand-animated Lucide + Phosphor icons for React. Copy and ship.
 
@@ -10,11 +10,11 @@ Beautiful, hand-animated Lucide + Phosphor icons for React. Copy and ship.
 ## Install
 
 ```bash
-npm install motive-icons framer-motion
+npm install rex-motive framer-motion
 # or
-yarn add motive-icons framer-motion
+yarn add rex-motive framer-motion
 # or
-pnpm add motive-icons framer-motion
+pnpm add rex-motive framer-motion
 ```
 
 `react`, `react-dom`, and `framer-motion` are peer dependencies.
@@ -22,7 +22,7 @@ pnpm add motive-icons framer-motion
 ## Usage
 
 ```tsx
-import { AnimatedBell, AnimatedHeart } from "motive-icons";
+import { AnimatedBell, AnimatedHeart } from "rex-motive";
 
 export default function App() {
   return (
@@ -61,7 +61,7 @@ Every animated icon accepts the same props:
 Motive ships a low-level `IconShell` primitive so you can compose your own:
 
 ```tsx
-import { IconShell } from "motive-icons";
+import { IconShell } from "rex-motive";
 import { motion } from "framer-motion";
 
 export function AnimatedRocket(props) {

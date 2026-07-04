@@ -15,7 +15,7 @@ const BGS = [
 ];
 
 function buildCode({ name, trigger, size, stroke, loop }) {
-  const importLine = `import { Animated${name} } from "motive-icons";`;
+  const importLine = `import { Animated${name} } from "rex-motive";`;
   const usage = `<Animated${name}\n  size={${size}}\n  strokeWidth={${stroke}}\n  trigger="${trigger.toLowerCase()}"${loop ? "\n  loop" : ""}\n/>`;
   return `${importLine}\n\nexport default function Demo() {\n  return (\n    ${usage.replace(/\n/g, "\n    ")}\n  );\n}`;
 }

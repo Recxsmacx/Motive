@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Github, Coffee } from "lucide-react";
-import { AnimatedHeart } from "motive-icons";
+import { AnimatedHeart } from "rex-motive";
 import { TESTIDS } from "@/constants/testIds";
 
 export default function Footer() {

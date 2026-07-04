@@ -1,28 +1,15 @@
 {
-  "name": "motive-icons",
+  "name": "rex-motive",
   "version": "0.1.0",
-  "description": "Beautiful, hand-animated Lucide + Phosphor icons for React. Copy and ship.",
+  "description": "Beautiful animated icons for modern React interfaces. Copy, customize, and ship.",
   "keywords": ["react", "icons", "animated-icons", "framer-motion", "lucide", "phosphor", "svg"],
   "license": "MIT",
-  "author": "Motive Contributors",
-  "homepage": "https://github.com/motive-icons/motive",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/motive-icons/motive.git"
-  },
+  "author": "Ram Shukla",
   "sideEffects": false,
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
-    },
-    "./package.json": "./package.json"
-  },
   "files": [
     "dist",
     "README.md",

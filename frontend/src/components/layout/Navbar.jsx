@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Github, Sun, Moon, Search as SearchIcon, Menu as MenuIcon, X as XIcon, Coffee } from "lucide-react";
 import { useTheme } from "@/context/ThemeContext";
 import { TESTIDS } from "@/constants/testIds";
-import { AnimatedLoader } from "motive-icons";
+import { AnimatedLoader } from "rex-motive";
 
 const NAV_ITEMS = [
   { to: "/icons", label: "Icons", tid: TESTIDS.navLinkIcons },

@@ -1,5 +1,5 @@
 /**
- * Icon Registry — single source of truth. Powered by the real `motive-icons`
+ * Icon Registry — single source of truth. Powered by the real `rex-motive`
  * npm package built from /app/packages/motive-icons.
  *
  * Adding a new animated icon:
@@ -41,7 +41,7 @@ import {
   AnimatedVolume,
   AnimatedWifi,
   AnimatedLoader,
-} from "motive-icons";
+} from "rex-motive";
 
 export const CATEGORIES = [
   "Navigation",

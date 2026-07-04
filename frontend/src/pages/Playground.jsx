@@ -25,7 +25,7 @@ export default function Playground() {
   const Comp = icon.component;
 
   const code = useMemo(() => {
-    return `import { Animated${icon.name} } from "motive-icons";
+    return `import { Animated${icon.name} } from "rex-motive";
 
 export default function Demo() {
   return (

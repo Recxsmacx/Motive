@@ -1,23 +1,21 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Download, ExternalLink, Package, CheckCircle2, Terminal } from "lucide-react";
-import { AnimatedBell, AnimatedHeart, AnimatedLoader } from "motive-icons";
+import { AnimatedBell, AnimatedHeart, AnimatedLoader } from "rex-motive";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import CodeBlock from "@/components/shared/CodeBlock";
 
 const PACKAGE_VERSION = "0.1.0";
-const TARBALL_URL = "/motive-icons-0.1.0.tgz";
-
-const install = `# Install from the local tarball (until published to npm)
-yarn add https://icons-in-motion.preview.emergentagent.com/motive-icons-0.1.0.tgz
+const install = `# Install the package
+yarn add rex-motive
 # or with npm
-npm install https://icons-in-motion.preview.emergentagent.com/motive-icons-0.1.0.tgz
+npm install rex-motive
 
 # You'll also need framer-motion as a peer dep
 yarn add framer-motion`;
 
-const usage = `import { AnimatedBell, AnimatedHeart } from "motive-icons";
+const usage = `import { AnimatedBell, AnimatedHeart } from "rex-motive";
 
 export default function App() {
   return (
@@ -79,7 +77,7 @@ export default function AnimatedRocket(props) {
 export { default as AnimatedRocket } from "./animations/AnimatedRocket";
 
 // src/registry/iconRegistry.js — add:
-import { AnimatedRocket } from "motive-icons";
+import { AnimatedRocket } from "rex-motive";
 iconRegistry.push({
   name: "Rocket",
   library: "Lucide",
@@ -109,7 +107,7 @@ export default function Docs() {
           <div className="flex items-center gap-2 text-[10px] font-mono uppercase tracking-[0.18em] text-muted-foreground">
             <span>/ Documentation</span>
             <span className="text-border">·</span>
-            <span className="text-violet-400">motive-icons@{PACKAGE_VERSION}</span>
+            <span className="text-violet-400">rex-motive@{PACKAGE_VERSION}</span>
           </div>
           <h1 className="mt-3 text-4xl sm:text-5xl font-semibold tracking-tightest">
             Getting started
@@ -128,7 +126,7 @@ export default function Docs() {
         <section id="install">
           <SectionHeading eyebrow="01" title="Install" />
           <p className="mt-3 text-muted-foreground">
-            <code className="font-mono text-xs px-1.5 py-0.5 rounded bg-white/[0.06] border border-border">motive-icons</code>{" "}
+            <code className="font-mono text-xs px-1.5 py-0.5 rounded bg-white/[0.06] border border-border">rex-motive</code>{" "}
             is a React library. It ships as ESM + CJS with hand-written
             TypeScript declarations and no runtime deps other than{" "}
             <code className="font-mono text-xs px-1.5 py-0.5 rounded bg-white/[0.06] border border-border">framer-motion</code>{" "}
@@ -137,28 +135,7 @@ export default function Docs() {
           <div className="mt-5">
             <CodeBlock code={install} language="bash" />
           </div>
-          <div className="mt-4 rounded-lg border border-border bg-white/[0.02] p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
-            <div className="flex items-start gap-3">
-              <div className="w-9 h-9 rounded-md border border-border bg-white/[0.03] flex items-center justify-center text-violet-400">
-                <Package className="w-4 h-4" />
-              </div>
-              <div>
-                <div className="text-sm font-medium">motive-icons-{PACKAGE_VERSION}.tgz</div>
-                <div className="text-xs text-muted-foreground mt-0.5">
-                  ESM + CJS + .d.ts · 12 KB gzipped
-                </div>
-              </div>
-            </div>
-            <a
-              data-testid="docs-download-tarball"
-              href={TARBALL_URL}
-              download
-              className="inline-flex items-center gap-2 h-9 px-3 rounded-md border border-border hover:border-white/20 text-xs text-foreground"
-            >
-              <Download className="w-3.5 h-3.5" />
-              Download tarball
-            </a>
-          </div>
+
         </section>
 
         {/* 02 Basic usage */}
@@ -354,7 +331,7 @@ function PropChip({ children }) {
 
 function VerifiedBanner() {
   const [copied, setCopied] = useState(false);
-  const cmd = `yarn add https://icons-in-motion.preview.emergentagent.com${TARBALL_URL}`;
+  const cmd = `yarn add rex-motive framer-motion`;
   return (
     <div className="mt-8 flex items-center gap-3 rounded-md border border-emerald-500/25 bg-emerald-500/[0.06] px-3 py-2.5">
       <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
@@ -363,7 +340,7 @@ function VerifiedBanner() {
         <span className="text-muted-foreground">
           Every icon you see is rendered from{" "}
           <code className="font-mono px-1 py-0.5 rounded bg-white/[0.06] border border-border">
-            motive-icons@{PACKAGE_VERSION}
+            rex-motive@{PACKAGE_VERSION}
           </code>
           .
         </span>
