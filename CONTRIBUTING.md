@@ -35,7 +35,7 @@ Then add your icon following the three-file pattern in [README.md → Adding a n
 ## What we're careful about
 
 - **Generic animations** — no blanket scale-1.1-on-hover for every icon. The animation must relate to the icon's meaning (bells swing, arrows travel, gears rotate).
-- **Duplicate icons** — check the [Icons page](https://icons-in-motion.preview.emergentagent.com/icons) first.
+- **Duplicate icons** — check the [Icons page](https://motive-icons.com/icons) first.
 - **Adding heavy dependencies** — the package must stay small and depend only on `framer-motion` (peer).
 - **Breaking API changes** — we love PRs, but breaking `AnimatedIconProps` needs an issue discussion first.
 

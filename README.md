@@ -6,7 +6,7 @@
 
 A production-quality, open-source library of hand-animated Lucide + Phosphor icons for React, plus the marketing/gallery/playground website that showcases it.
 
-[Live site](https://icons-in-motion.preview.emergentagent.com) · [Documentation](https://icons-in-motion.preview.emergentagent.com/docs) · [Playground](https://icons-in-motion.preview.emergentagent.com/playground) · [Download tarball](https://icons-in-motion.preview.emergentagent.com/motive-icons-0.1.0.tgz)
+[Live site](https://motive-icons.com) · [Documentation](https://motive-icons.com/docs) · [Playground](https://motive-icons.com/playground) · [Download tarball](https://motive-icons.com/motive-icons-0.1.0.tgz)
 
 </div>
 
@@ -332,7 +332,7 @@ The tarball at `public/motive-icons-0.1.0.tgz` is copied as-is into the build, s
 
 ## Support the project
 
-If Motive helps you ship, consider [sponsoring on GitHub](https://github.com/sponsors/motive-icons), [buying a coffee](https://www.buymeacoffee.com/motive-icons), or featuring your company logo on the site → see the [Sponsors section](https://icons-in-motion.preview.emergentagent.com/#sponsors).
+If Motive helps you ship, consider [sponsoring on GitHub](https://github.com/sponsors/motive-icons) or featuring your company logo on the site → see the [Sponsors section](https://motive-icons.com/#sponsors).
 
 ---
 
