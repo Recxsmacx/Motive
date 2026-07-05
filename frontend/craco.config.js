@@ -85,6 +85,15 @@ let webpackConfig = {
       'rex-motive': path.resolve(__dirname, '../packages/motive-icons')
     },
     configure: (webpackConfig) => {
+      // Remove ModuleScopePlugin to allow imports outside of src/
+      if (webpackConfig.resolve && webpackConfig.resolve.plugins) {
+        const scopePluginIndex = webpackConfig.resolve.plugins.findIndex(
+          ({ constructor }) => constructor && constructor.name === 'ModuleScopePlugin'
+        );
+        if (scopePluginIndex > -1) {
+          webpackConfig.resolve.plugins.splice(scopePluginIndex, 1);
+        }
+      }
 
       // Add ignored patterns to reduce watched directories
         webpackConfig.watchOptions = {
