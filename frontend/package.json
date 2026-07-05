@@ -62,9 +62,8 @@
     "zod": "3.24.4"
   },
   "scripts": {
-    "prebuild": "cd ../packages/motive-icons && yarn install && yarn build",
     "start": "craco start",
-    "build": "craco build",
+    "build": "cd ../packages/motive-icons && yarn install && yarn build && cd ../../frontend && craco build",
     "test": "craco test"
   },
   "browserslist": {
