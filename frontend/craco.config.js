@@ -82,6 +82,7 @@ let webpackConfig = {
   webpack: {
     alias: {
       '@': path.resolve(__dirname, 'src'),
+      'rex-motive': path.resolve(__dirname, '../packages/motive-icons')
     },
     configure: (webpackConfig) => {
 
