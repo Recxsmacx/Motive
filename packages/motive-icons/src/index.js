@@ -35,3 +35,5 @@ export { default as AnimatedPause } from "./animations/AnimatedPause";
 export { default as AnimatedVolume } from "./animations/AnimatedVolume";
 export { default as AnimatedWifi } from "./animations/AnimatedWifi";
 export { default as AnimatedLoader } from "./animations/AnimatedLoader";
+export { default as AnimatedSun } from "./animations/AnimatedSun";
+export { default as AnimatedMoon } from "./animations/AnimatedMoon";

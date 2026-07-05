@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { Github, Sun, Moon, Search as SearchIcon, Menu as MenuIcon, X as XIcon, Coffee } from "lucide-react";
+import { Github, Coffee } from "lucide-react";
 import { useTheme } from "@/context/ThemeContext";
 import { TESTIDS } from "@/constants/testIds";
-import { AnimatedLoader } from "rex-motive";
+import { AnimatedSearch, AnimatedSun, AnimatedMoon, AnimatedMenu, AnimatedX } from "rex-motive";
 
 const NAV_ITEMS = [
   { to: "/icons", label: "Icons", tid: TESTIDS.navLinkIcons },
@@ -70,7 +70,7 @@ export default function Navbar({ onSearchClick }) {
               aria-label="Search icons"
               className="hidden sm:inline-flex items-center gap-2 h-9 px-3 rounded-md border border-border text-xs text-muted-foreground hover:text-foreground hover:border-border/80 transition-colors"
             >
-              <SearchIcon className="w-3.5 h-3.5" />
+              <AnimatedSearch size={14} className="w-3.5 h-3.5" />
               <span>Search…</span>
               <span className="font-mono text-[10px] px-1.5 py-0.5 rounded bg-white/[0.06] dark:bg-white/[0.06] border border-white/[0.06]">
                 ⌘K
@@ -83,7 +83,7 @@ export default function Navbar({ onSearchClick }) {
               aria-label="Toggle theme"
               className="w-9 h-9 inline-flex items-center justify-center rounded-md border border-border text-muted-foreground hover:text-foreground transition-colors"
             >
-              {theme === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+              {theme === "dark" ? <AnimatedSun size={16} className="w-4 h-4" trigger="hover" /> : <AnimatedMoon size={16} className="w-4 h-4" trigger="hover" />}
             </button>
 
             <a
@@ -114,7 +114,7 @@ export default function Navbar({ onSearchClick }) {
               className="md:hidden w-9 h-9 inline-flex items-center justify-center rounded-md border border-border"
               aria-label="Toggle menu"
             >
-              {mobileOpen ? <XIcon className="w-4 h-4" /> : <MenuIcon className="w-4 h-4" />}
+              {mobileOpen ? <AnimatedX size={16} className="w-4 h-4" trigger="hover" /> : <AnimatedMenu size={16} className="w-4 h-4" trigger="hover" />}
             </button>
           </div>
         </div>

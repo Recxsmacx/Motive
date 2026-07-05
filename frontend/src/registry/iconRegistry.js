@@ -41,6 +41,8 @@ import {
   AnimatedVolume,
   AnimatedWifi,
   AnimatedLoader,
+  AnimatedSun,
+  AnimatedMoon,
 } from "rex-motive";
 
 export const CATEGORIES = [
@@ -101,6 +103,8 @@ export const iconRegistry = [
   { name: "Volume", library: "Lucide", category: "Media", tags: ["sound", "audio", "waves"], animation: "Draw", description: "Waves appear in sequence.", component: AnimatedVolume },
   { name: "Wifi", library: "Phosphor", category: "Communication", tags: ["signal", "wireless", "network"], animation: "Draw", description: "Signals appear sequentially.", component: AnimatedWifi },
   { name: "Loader", library: "Phosphor", category: "Interface", tags: ["loading", "spinner", "wait"], animation: "Loop", description: "Smooth continuous rotation.", component: AnimatedLoader },
+  { name: "Sun", library: "Lucide", category: "Interface", tags: ["light", "mode", "day"], animation: "Micro-interaction", description: "Expands and rotates slightly.", component: AnimatedSun },
+  { name: "Moon", library: "Lucide", category: "Interface", tags: ["dark", "mode", "night"], animation: "Micro-interaction", description: "Rocks back and forth.", component: AnimatedMoon },
 ];
 
 export const iconBySlug = Object.fromEntries(
