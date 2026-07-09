@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { Github, Coffee } from "lucide-react";
+import { Github, Heart } from "lucide-react";
 import { useTheme } from "@/context/ThemeContext";
 import { TESTIDS } from "@/constants/testIds";
 import { AnimatedSearch, AnimatedSun, AnimatedMoon, AnimatedMenu, AnimatedX } from "rex-motive";
@@ -89,16 +89,16 @@ export default function Navbar({ onSearchClick }) {
             <a
               data-testid="nav-sponsor-btn"
               href="/#sponsors"
-              className="hidden lg:inline-flex items-center gap-1.5 h-9 px-3 rounded-md border border-amber-400/30 bg-amber-400/10 hover:bg-amber-400/20 text-amber-300 text-xs font-medium transition-colors"
+              className="hidden lg:inline-flex items-center gap-1.5 h-9 px-3 rounded-md border border-violet-500/30 bg-violet-500/15 hover:bg-violet-500/25 text-violet-300 text-xs font-medium transition-colors"
               aria-label="Sponsor the project"
             >
-              <Coffee className="w-3.5 h-3.5" />
+              <Heart className="w-3.5 h-3.5" />
               Sponsor
             </a>
 
             <a
               data-testid={TESTIDS.navGithubBtn}
-              href="https://github.com/"
+              href="https://github.com/Recxsmacx/Motive"
               target="_blank"
               rel="noreferrer"
               className="hidden sm:inline-flex items-center gap-2 h-9 px-3 rounded-md bg-white/[0.06] dark:bg-white/[0.06] hover:bg-white/[0.1] border border-border text-sm text-foreground transition-colors"
@@ -140,7 +140,7 @@ export default function Navbar({ onSearchClick }) {
                 </Link>
               ))}
               <a
-                href="https://github.com/"
+                href="https://github.com/Recxsmacx/Motive"
                 target="_blank"
                 rel="noreferrer"
                 className="px-3 py-2.5 rounded-md text-sm flex items-center gap-2"

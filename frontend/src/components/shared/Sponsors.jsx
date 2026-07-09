@@ -1,10 +1,10 @@
-import { Github, Coffee, Heart, Building2, ArrowRight, Check } from "lucide-react";
+import { Github, Building2, ArrowRight, Check } from "lucide-react";
 import { motion } from "framer-motion";
 import { AnimatedHeart } from "rex-motive";
 
 /**
- * Sponsors — three-tier support system:
- *   1. Buy Me a Coffee (one-off tips)
+ * Sponsors — two-tier support system:
+ *   1. GitHub Sponsors (recurring, individuals)
  *   2. GitHub Sponsors (recurring, individuals)
  *   3. Feature your logo (companies — paid tier with logo placement)
  *
@@ -13,25 +13,13 @@ import { AnimatedHeart } from "rex-motive";
 
 const TIERS = [
   {
-    id: "coffee",
-    icon: Coffee,
-    title: "Buy me a coffee",
-    subtitle: "One-off",
-    body: "Say thanks with a small tip. Fuels late-night icon animations.",
-    cta: "Buy a coffee",
-    href: "https://www.buymeacoffee.com/motive-icons",
-    accent: "amber",
-    perks: ["A warm thank-you note", "Contributor shout-out (optional)"],
-    testId: "sponsor-coffee-btn",
-  },
-  {
     id: "github",
     icon: Github,
     title: "GitHub Sponsors",
     subtitle: "Recurring",
     body: "Monthly support keeps the library maintained and helps ship new icons regularly.",
     cta: "Sponsor on GitHub",
-    href: "https://github.com/sponsors/motive-icons",
+    href: "https://github.com/sponsors/Recxsmacx",
     accent: "violet",
     perks: ["Sponsor badge on your GitHub", "Priority on icon requests", "Access to sponsors-only updates"],
     testId: "sponsor-github-btn",
@@ -77,7 +65,7 @@ export default function Sponsors() {
         </div>
 
         {/* Tier cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border rounded-xl overflow-hidden border border-border">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-border rounded-xl overflow-hidden border border-border">
           {TIERS.map((tier, idx) => (
             <TierCard key={tier.id} tier={tier} index={idx} />
           ))}
@@ -108,31 +96,6 @@ export default function Sponsors() {
               <FeaturedSlot key={i} index={i} />
             ))}
           </div>
-        </div>
-
-        {/* Small tip strip */}
-        <div className="mt-10 rounded-xl border border-border bg-[#0d0d12] p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-          <div className="flex items-start gap-3">
-            <div className="w-9 h-9 rounded-md bg-amber-400/10 border border-amber-400/30 flex items-center justify-center text-amber-300">
-              <Coffee className="w-4 h-4" />
-            </div>
-            <div>
-              <div className="text-sm font-medium">Just want to say thanks?</div>
-              <div className="text-xs text-muted-foreground mt-0.5">
-                A quick coffee helps more than you think.
-              </div>
-            </div>
-          </div>
-          <a
-            data-testid="sponsor-tip-btn"
-            href="https://www.buymeacoffee.com/motive-icons"
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-2 h-10 px-4 rounded-md bg-amber-400 hover:bg-amber-300 text-zinc-900 text-sm font-semibold transition-colors"
-          >
-            <Coffee className="w-4 h-4" />
-            Buy me a coffee
-          </a>
         </div>
       </div>
     </section>

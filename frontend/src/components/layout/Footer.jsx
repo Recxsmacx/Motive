@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Github, Coffee } from "lucide-react";
+import { Github, Heart } from "lucide-react";
 import { AnimatedHeart } from "rex-motive";
 import { TESTIDS } from "@/constants/testIds";
 
@@ -42,10 +42,10 @@ export default function Footer() {
               Open source
             </div>
             <ul className="space-y-2.5 text-sm">
-              <li><a href="https://github.com/" className="text-muted-foreground hover:text-foreground transition-colors inline-flex items-center gap-1.5"><Github className="w-3.5 h-3.5" /> GitHub</a></li>
-              <li><a href="https://github.com/" className="text-muted-foreground hover:text-foreground transition-colors">Contributing</a></li>
-              <li><a href="/#sponsors" className="text-muted-foreground hover:text-foreground transition-colors inline-flex items-center gap-1.5"><Coffee className="w-3.5 h-3.5" /> Sponsor</a></li>
-              <li><a href="https://github.com/" className="text-muted-foreground hover:text-foreground transition-colors">MIT License</a></li>
+              <li><a href="https://github.com/Recxsmacx/Motive" className="text-muted-foreground hover:text-foreground transition-colors inline-flex items-center gap-1.5"><Github className="w-3.5 h-3.5" /> GitHub</a></li>
+              <li><a href="https://github.com/Recxsmacx/Motive" className="text-muted-foreground hover:text-foreground transition-colors">Contributing</a></li>
+              <li><a href="/#sponsors" className="text-muted-foreground hover:text-foreground transition-colors inline-flex items-center gap-1.5"><Heart className="w-3.5 h-3.5" /> Sponsor</a></li>
+              <li><a href="https://github.com/Recxsmacx/Motive" className="text-muted-foreground hover:text-foreground transition-colors">MIT License</a></li>
             </ul>
           </div>
         </div>

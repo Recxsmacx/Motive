@@ -129,7 +129,7 @@ export default function Notifications() {
               </button>
               <a
                 data-testid={TESTIDS.heroGithubBtn}
-                href="https://github.com/"
+                href="https://github.com/Recxsmacx/Motive"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 h-11 px-5 rounded-md border border-border hover:border-white/20 text-sm font-medium transition-colors"
@@ -308,7 +308,7 @@ export default function Notifications() {
               <div className="mt-8 flex flex-wrap gap-3">
                 <a
                   data-testid={TESTIDS.osViewGithubBtn}
-                  href="https://github.com/"
+                  href="https://github.com/Recxsmacx/Motive"
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center gap-2 h-11 px-5 rounded-md bg-white text-zinc-900 text-sm font-medium hover:bg-zinc-100 transition-colors"
@@ -317,7 +317,7 @@ export default function Notifications() {
                 </a>
                 <a
                   data-testid={TESTIDS.osContribBtn}
-                  href="https://github.com/"
+                  href="https://github.com/Recxsmacx/Motive"
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center gap-2 h-11 px-5 rounded-md border border-border hover:border-white/20 text-sm font-medium transition-colors"
