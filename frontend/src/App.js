@@ -9,6 +9,7 @@ import Icons from "@/pages/Icons";
 import Playground from "@/pages/Playground";
 import Docs from "@/pages/Docs";
 import NotFound from "@/pages/NotFound";
+import ScrollToTop from "@/components/shared/ScrollToTop";
 
 function App() {
   useEffect(() => {
@@ -18,6 +19,7 @@ function App() {
   return (
     <ThemeProvider>
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/icons" element={<Icons />} />
