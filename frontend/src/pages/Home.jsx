@@ -201,43 +201,45 @@ export default function Notifications() {
         </div>
       </section>
 
-      {/* CODE PREVIEW */}
+      {/* DEVELOPER EXPERIENCE */}
       <section data-testid={TESTIDS.codeSection} className="py-24 border-t border-border">
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
-            <div>
-              <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-muted-foreground">
-                / Developer experience
-              </div>
-              <h2 className="mt-3 text-3xl sm:text-4xl font-semibold tracking-tight">
-                One import. One prop. Ship it.
-              </h2>
-              <p className="mt-4 text-muted-foreground leading-relaxed max-w-md">
-                Every icon is a strongly-typed React component. Choose your
-                trigger, adjust the props, and the animation just works.
-              </p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch">
+            <div className="flex flex-col justify-between">
+              <div>
+                <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-muted-foreground">
+                  / Developer experience
+                </div>
+                <h2 className="mt-3 text-3xl sm:text-4xl font-semibold tracking-tight">
+                  One import. One prop. Ship it.
+                </h2>
+                <p className="mt-4 text-muted-foreground leading-relaxed max-w-md">
+                  Every icon is a strongly-typed React component. Choose your
+                  trigger, adjust the props, and the animation just works.
+                </p>
 
-              <div data-testid={TESTIDS.triggerSelector} className="mt-8 flex items-center gap-1.5">
-                <span className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground mr-2">
-                  Trigger
-                </span>
-                {["hover", "click", "auto"].map((t) => (
-                  <button
-                    key={t}
-                    data-testid={`${TESTIDS.triggerSelector}-${t}`}
-                    onClick={() => setCodeTrigger(t)}
-                    className={`h-8 px-3 rounded-md text-xs transition-colors border ${
-                      codeTrigger === t
-                        ? "bg-violet-500/15 border-violet-500/40 text-violet-300"
-                        : "border-border text-muted-foreground hover:text-foreground"
-                    }`}
-                  >
-                    {t}
-                  </button>
-                ))}
+                <div data-testid={TESTIDS.triggerSelector} className="mt-8 flex items-center gap-1.5">
+                  <span className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground mr-2">
+                    Trigger
+                  </span>
+                  {["hover", "click", "auto"].map((t) => (
+                    <button
+                      key={t}
+                      data-testid={`${TESTIDS.triggerSelector}-${t}`}
+                      onClick={() => setCodeTrigger(t)}
+                      className={`h-8 px-3 rounded-md text-xs transition-colors border ${
+                        codeTrigger === t
+                          ? "bg-violet-500/15 border-violet-500/40 text-violet-300"
+                          : "border-border text-muted-foreground hover:text-foreground"
+                      }`}
+                    >
+                      {t}
+                    </button>
+                  ))}
+                </div>
               </div>
 
-              <div className="mt-8 rounded-lg border border-border bg-[#0d0d12] p-8 flex items-center justify-center">
+              <div className="mt-8 rounded-lg border border-border bg-[#0d0d12] p-8 flex items-center justify-center flex-grow">
                 <div className="text-violet-400">
                   <LivePreviewBell trigger={codeTrigger} />
                 </div>
@@ -248,7 +250,7 @@ export default function Notifications() {
               code={codeSample}
               language="tsx"
               testId={TESTIDS.copyCodeBtn}
-              copyLabel="Copy"
+              className="h-full flex flex-col"
             />
           </div>
         </div>

@@ -98,7 +98,7 @@ export default function CodeBlock({ code, language = "tsx", copyLabel = "Copy", 
           {copied ? "Copied" : copyLabel}
         </button>
       </div>
-      <pre className="p-4 text-[13px] leading-relaxed font-mono overflow-x-auto custom-scroll">
+      <pre className="p-5 text-[15px] leading-loose font-mono overflow-x-auto custom-scroll flex-grow">
         <code>
           {tokens.map((t, i) => (
             <span key={i} className={CLASS_MAP[t.t]}>{t.v}</span>
