@@ -3,6 +3,7 @@ import "@/App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "@/context/ThemeContext";
 import { Toaster } from "sonner";
+import { Analytics } from "@vercel/analytics/react";
 import Home from "@/pages/Home";
 import Icons from "@/pages/Icons";
 import Playground from "@/pages/Playground";
@@ -35,6 +36,7 @@ function App() {
             },
           }}
         />
+        <Analytics />
       </BrowserRouter>
     </ThemeProvider>
   );
