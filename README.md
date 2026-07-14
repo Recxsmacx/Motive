@@ -1,6 +1,14 @@
 <div align="center">
 
-# Motive
+# Motive <div align="center">
+
+<p>
+  <img src="https://visitor-badge.laobi.icu/badge?page_id=Recxsmacx.Motive&left_text=Visitors" alt="Visitors"/>
+</p>
+
+<sub>Thanks for checking out Motive! ⭐ If you find it useful, consider starring the repository.</sub>
+
+</div>
 
 
 
