@@ -48,16 +48,14 @@ export default function Sponsors() {
       className="py-24 border-t border-border"
     >
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
-        <div className="flex items-end justify-between gap-8 mb-14 flex-wrap">
-          <div>
-            <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-muted-foreground">
-              / Support the project
-            </div>
-            <h2 className="mt-3 text-3xl sm:text-4xl font-semibold tracking-tight max-w-xl">
-              Sponsor Motive. Keep icons moving.
-            </h2>
+        <div className="mb-14">
+          <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-muted-foreground mb-3">
+            / Support the project
           </div>
-          <div className="text-sm text-muted-foreground max-w-sm inline-flex items-center gap-2">
+          <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight max-w-none">
+            Sponsor Motive. Keep icons moving.
+          </h2>
+          <div className="mt-4 text-base text-muted-foreground max-w-none flex items-center gap-2">
             <span>Every contribution keeps the library</span>
             <AnimatedHeart size={14} trigger="auto" loop />
             <span>free, open, and growing.</span>
