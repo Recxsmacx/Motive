@@ -155,9 +155,9 @@ export default function Notifications() {
             id="showcase"
           >
             <div data-testid={TESTIDS.showcaseSection} className="contents">
-            <div className="absolute inset-0 bg-grid opacity-40 pointer-events-none" />
-            <HeroGrid pointer={pointer} onSelect={setSelected} />
-            <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#0d0d12] to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-grid opacity-40 pointer-events-none" />
+              <HeroGrid pointer={pointer} onSelect={setSelected} />
+              <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#0d0d12] to-transparent pointer-events-none" />
             </div>
           </motion.div>
         </div>
@@ -166,19 +166,16 @@ export default function Notifications() {
       {/* CORE VALUE */}
       <section data-testid={TESTIDS.valueSection} className="py-24 border-t border-border">
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
-          <div className="flex items-end justify-between gap-8 mb-14">
-            <div>
-              <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-muted-foreground">
-                / Why Motive
-              </div>
-              <h2 className="mt-3 text-3xl sm:text-4xl font-semibold tracking-tight max-w-xl">
-                Beautiful icons. Meaningful motion.
-              </h2>
+          <div className="mb-14">
+            <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-muted-foreground mb-3">
+              / Why Motive
             </div>
-            <div className="hidden md:block text-sm text-muted-foreground max-w-xs">
-              Every icon in the library ships with a hand-crafted animation
-              that reflects its meaning, not a blanket scale-and-rotate.
-            </div>
+            <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight max-w-xl">
+              Beautiful icons. Meaningful motion.
+            </h2>
+            <p className="mt-4 text-base text-muted-foreground max-w-none">
+              Each icon features a unique, hand-crafted animation tailored to its meaning—no generic effects.
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border rounded-xl overflow-hidden border border-border">
@@ -201,7 +198,7 @@ export default function Notifications() {
         </div>
       </section>
 
-      {/* DEVELOPER EXPERIENCE */}
+      {/* CODE PREVIEW */}
       <section data-testid={TESTIDS.codeSection} className="py-24 border-t border-border">
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch">
@@ -227,11 +224,10 @@ export default function Notifications() {
                       key={t}
                       data-testid={`${TESTIDS.triggerSelector}-${t}`}
                       onClick={() => setCodeTrigger(t)}
-                      className={`h-8 px-3 rounded-md text-xs transition-colors border ${
-                        codeTrigger === t
+                      className={`h-8 px-3 rounded-md text-xs transition-colors border ${codeTrigger === t
                           ? "bg-violet-500/15 border-violet-500/40 text-violet-300"
                           : "border-border text-muted-foreground hover:text-foreground"
-                      }`}
+                        }`}
                     >
                       {t}
                     </button>
