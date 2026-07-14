@@ -2,6 +2,14 @@
 
 # Motive
 
+
+
+
+https://github.com/user-attachments/assets/ee25f3ed-34bc-4546-88b7-f4de69b355b0
+
+
+
+
 **Beautiful icons. Meaningful motion. Copy and ship.**
 
 A production-quality, open-source library of hand-animated Lucide + Phosphor icons for React, plus the marketing/gallery/playground website that showcases it.
