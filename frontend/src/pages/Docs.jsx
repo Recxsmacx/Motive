@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { ArrowRight, Download, ExternalLink, Package, CheckCircle2, Terminal } from "lucide-react";
 import { AnimatedBell, AnimatedHeart, AnimatedLoader } from "rex-motive";
@@ -98,6 +99,10 @@ const TRIGGER_EXAMPLES = [
 export default function Docs() {
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <Helmet>
+        <title>Documentation | Motive Animated Icons</title>
+        <meta name="description" content="Everything you need to install Motive, use icons in your app, and contribute new animations." />
+      </Helmet>
       <Navbar onSearchClick={() => {}} />
 
       {/* HERO */}

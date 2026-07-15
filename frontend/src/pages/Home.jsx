@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
+import { useNavigate, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, Github, Search as SearchIcon, Terminal } from "lucide-react";
 import Navbar from "@/components/layout/Navbar";
@@ -69,6 +70,10 @@ export default function Notifications() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <Helmet>
+        <title>Motive | Open-Source Animated Icons for React</title>
+        <meta name="description" content="Enhance your React applications with Motive—a free, open-source library of highly customizable, animated Lucide and Phosphor icons powered by Framer Motion." />
+      </Helmet>
       <Navbar onSearchClick={() => navigate("/icons")} />
 
       {/* HERO */}
@@ -95,11 +100,11 @@ export default function Notifications() {
               transition={{ delay: 0.05 }}
               className="mt-6 font-display font-semibold text-[44px] sm:text-[64px] lg:text-[80px] leading-[0.98] tracking-tightest"
             >
-              Icons that move
+              Open-Source Animated
               <br />
-              <span className="text-muted-foreground">with </span>
+              <span className="text-muted-foreground">Icons for </span>
               <span className="relative inline-block">
-                <span className="text-violet-500">purpose.</span>
+                <span className="text-violet-500">React.</span>
               </span>
             </motion.h1>
 
@@ -109,8 +114,7 @@ export default function Notifications() {
               transition={{ delay: 0.15 }}
               className="mt-6 max-w-xl text-base sm:text-lg text-muted-foreground leading-relaxed"
             >
-              A collection of beautifully animated Lucide and Phosphor icons.
-              Open source, customizable, and built for modern interfaces.
+              Enhance your React applications with Motive—a free, open-source library of highly customizable, animated Lucide and Phosphor icons powered by Framer Motion.
             </motion.p>
 
             <motion.div
@@ -119,14 +123,14 @@ export default function Notifications() {
               transition={{ delay: 0.25 }}
               className="mt-9 flex flex-wrap items-center gap-3"
             >
-              <button
+              <Link
+                to="/icons"
                 data-testid={TESTIDS.heroExploreBtn}
-                onClick={() => navigate("/icons")}
                 className="group inline-flex items-center gap-2 h-11 px-5 rounded-md bg-violet-600 hover:bg-violet-500 text-white text-sm font-medium shadow-[0_0_30px_rgba(139,92,246,0.35)] hover:shadow-[0_0_40px_rgba(139,92,246,0.55)] transition-all"
               >
                 Explore icons
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-              </button>
+              </Link>
               <a
                 data-testid={TESTIDS.heroGithubBtn}
                 href="https://github.com/Recxsmacx/Motive"
@@ -266,13 +270,13 @@ export default function Notifications() {
                 {iconRegistry.length} icons, all animated.
               </h2>
             </div>
-            <button
+            <Link
+              to="/icons"
               data-testid={TESTIDS.browseAllBtn}
-              onClick={() => navigate("/icons")}
               className="hidden sm:inline-flex items-center gap-2 h-10 px-4 text-sm rounded-md border border-border hover:border-white/20 transition-colors"
             >
               Browse all icons <ArrowRight className="w-4 h-4" />
-            </button>
+            </Link>
           </div>
 
           <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-px bg-border rounded-xl overflow-hidden border border-border">

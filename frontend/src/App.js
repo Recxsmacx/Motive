@@ -10,10 +10,6 @@ import Docs from "@/pages/Docs";
 import NotFound from "@/pages/NotFound";
 
 function App() {
-  useEffect(() => {
-    document.title = "Motive — Icons that move with purpose";
-  }, []);
-
   return (
     <ThemeProvider>
       <BrowserRouter>
