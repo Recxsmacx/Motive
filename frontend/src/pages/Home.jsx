@@ -100,11 +100,11 @@ export default function Notifications() {
               transition={{ delay: 0.05 }}
               className="mt-6 font-display font-semibold text-[44px] sm:text-[64px] lg:text-[80px] leading-[0.98] tracking-tightest"
             >
-              Open-Source Animated
+              Icons that move
               <br />
-              <span className="text-muted-foreground">Icons for </span>
+              <span className="text-muted-foreground">with </span>
               <span className="relative inline-block">
-                <span className="text-violet-500">React.</span>
+                <span className="text-violet-500">purpose.</span>
               </span>
             </motion.h1>
 
@@ -114,7 +114,8 @@ export default function Notifications() {
               transition={{ delay: 0.15 }}
               className="mt-6 max-w-xl text-base sm:text-lg text-muted-foreground leading-relaxed"
             >
-              Enhance your React applications with Motive—a free, open-source library of highly customizable, animated Lucide and Phosphor icons powered by Framer Motion.
+              A collection of beautifully animated Lucide and Phosphor icons.
+              Open source, customizable, and built for modern interfaces.
             </motion.p>
 
             <motion.div
