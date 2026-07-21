@@ -72,3 +72,5 @@ export declare function AnimatedPause(props: AnimatedIconProps): JSX.Element;
 export declare function AnimatedVolume(props: AnimatedIconProps): JSX.Element;
 export declare function AnimatedWifi(props: AnimatedIconProps): JSX.Element;
 export declare function AnimatedLoader(props: AnimatedIconProps): JSX.Element;
+export declare function AnimatedSun(props: AnimatedIconProps): JSX.Element;
+export declare function AnimatedMoon(props: AnimatedIconProps): JSX.Element;

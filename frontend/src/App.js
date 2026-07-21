@@ -12,10 +12,6 @@ import NotFound from "@/pages/NotFound";
 import ScrollToTop from "@/components/shared/ScrollToTop";
 
 function App() {
-  useEffect(() => {
-    document.title = "Motive — Icons that move with purpose";
-  }, []);
-
   return (
     <ThemeProvider>
       <BrowserRouter>
