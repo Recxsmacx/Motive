@@ -9,6 +9,7 @@ import CodeBlock from "@/components/shared/CodeBlock";
 import IconCard from "@/components/shared/IconCard";
 import IconDetailModal from "@/components/shared/IconDetailModal";
 import Sponsors from "@/components/shared/Sponsors";
+import Grainient from "@/components/ui/Grainient";
 import { iconRegistry } from "@/registry/iconRegistry";
 import { TESTIDS } from "@/constants/testIds";
 
@@ -293,8 +294,32 @@ export default function Notifications() {
       <section data-testid={TESTIDS.openSourceSection} className="py-24 border-t border-border">
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
           <div className="rounded-2xl border border-border bg-[#0d0d12] p-8 sm:p-14 relative overflow-hidden">
-            <div className="absolute inset-0 bg-grid opacity-30 pointer-events-none" />
-            <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-violet-600/20 blur-3xl pointer-events-none" />
+            <div className="absolute inset-0 pointer-events-none opacity-50">
+              <Grainient
+                color1="#FF9FFC"
+                color2="#5227FF"
+                color3="#B497CF"
+                timeSpeed={0.25}
+                colorBalance={0.0}
+                warpStrength={1.0}
+                warpFrequency={5.0}
+                warpSpeed={2.0}
+                warpAmplitude={50.0}
+                blendAngle={0.0}
+                blendSoftness={0.05}
+                rotationAmount={500.0}
+                noiseScale={2.0}
+                grainAmount={0.1}
+                grainScale={2.0}
+                grainAnimated={false}
+                contrast={1.5}
+                gamma={1.0}
+                saturation={1.0}
+                centerX={0.0}
+                centerY={0.0}
+                zoom={0.9}
+              />
+            </div>
             <div className="relative max-w-2xl">
               <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-violet-400">
                 / Open source
