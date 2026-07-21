@@ -345,7 +345,7 @@ export default function Notifications() {
                 </a>
                 <a
                   data-testid={TESTIDS.osContribBtn}
-                  href="https://github.com/Recxsmacx/Motive"
+                  href="https://github.com/Recxsmacx/Motive?tab=contributing-ov-file"
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center gap-2 h-11 px-5 rounded-md border border-border hover:border-white/20 text-sm font-medium transition-colors"
