@@ -5,7 +5,9 @@ import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/compone
 import { Slider } from "@/components/ui/slider";
 import { Switch } from "@/components/ui/switch";
 import CodeBlock from "@/components/shared/CodeBlock";
+import { useIconColor } from "@/context/IconColorContext";
 import { TESTIDS } from "@/constants/testIds";
+
 
 const TRIGGERS = ["Hover", "Click", "Auto", "Focus"];
 const BGS = [
@@ -14,9 +16,10 @@ const BGS = [
   { key: "light", label: "Light" },
 ];
 
-function buildCode({ name, trigger, size, stroke, loop }) {
+function buildCode({ name, trigger, size, stroke, loop, color }) {
   const importLine = `import { Animated${name} } from "rex-motive";`;
-  const usage = `<Animated${name}\n  size={${size}}\n  strokeWidth={${stroke}}\n  trigger="${trigger.toLowerCase()}"${loop ? "\n  loop" : ""}\n/>`;
+  const colorProp = color ? `\n  color="${color}"` : "";
+  const usage = `<Animated${name}\n  size={${size}}\n  strokeWidth={${stroke}}${colorProp}\n  trigger="${trigger.toLowerCase()}"${loop ? "\n  loop" : ""}\n/>`;
   return `${importLine}\n\nexport default function Demo() {\n  return (\n    ${usage.replace(/\n/g, "\n    ")}\n  );\n}`;
 }
 
@@ -24,10 +27,21 @@ export default function IconDetailModal({ icon, open, onOpenChange }) {
   const [trigger, setTrigger] = useState("Hover");
   const [size, setSize] = useState(64);
   const [stroke, setStroke] = useState(1.75);
+  const { iconColor, setIconColor } = useIconColor();
   const [speed, setSpeed] = useState(1);
   const [loop, setLoop] = useState(false);
   const [bg, setBg] = useState("grid");
   const [replayKey, setReplayKey] = useState(0);
+
+  const MODAL_COLORS = [
+    { label: "Default", value: "" },
+    { label: "Violet", value: "#8b5cf6" },
+    { label: "Sky", value: "#06b6d4" },
+    { label: "Emerald", value: "#10b981" },
+    { label: "Amber", value: "#f59e0b" },
+    { label: "Rose", value: "#f43f5e" },
+    { label: "Blue", value: "#3b82f6" },
+  ];
 
   useEffect(() => {
     if (open) {
@@ -42,9 +56,10 @@ export default function IconDetailModal({ icon, open, onOpenChange }) {
   }, [open, icon]);
 
   const code = useMemo(
-    () => (icon ? buildCode({ name: icon.name, trigger, size, stroke, loop }) : ""),
-    [icon, trigger, size, stroke, loop],
+    () => (icon ? buildCode({ name: icon.name, trigger, size, stroke, loop, color: iconColor }) : ""),
+    [icon, trigger, size, stroke, loop, iconColor],
   );
+
 
   if (!icon) return null;
   const Comp = icon.component;
@@ -72,16 +87,20 @@ export default function IconDetailModal({ icon, open, onOpenChange }) {
             <div className={`relative aspect-square md:aspect-auto md:h-full flex items-center justify-center ${bgClass}`}>
               <div
                 data-testid={TESTIDS.modalPreview}
-                className={bg === "light" ? "text-violet-600" : "text-violet-400"}
+                className={!iconColor ? (bg === "light" ? "text-violet-600" : "text-violet-400") : ""}
+                style={{ color: iconColor || undefined }}
               >
                 <Comp
                   key={replayKey}
                   size={size}
                   strokeWidth={stroke}
+                  color={iconColor || undefined}
                   trigger={trigger.toLowerCase()}
                   loop={loop}
                 />
               </div>
+
+
               <button
                 data-testid={TESTIDS.modalReplay}
                 onClick={() => setReplayKey((k) => k + 1)}
@@ -153,6 +172,47 @@ export default function IconDetailModal({ icon, open, onOpenChange }) {
                 ))}
               </div>
             </div>
+
+            {/* Color */}
+            <div>
+              <Label>Color</Label>
+              <div className="mt-2 flex items-center gap-1.5 overflow-x-auto no-scrollbar pb-1">
+                {MODAL_COLORS.map((c) => (
+                  <button
+                    key={c.label}
+                    onClick={() => setIconColor(c.value)}
+                    className={`h-8 px-2.5 rounded-full text-xs border inline-flex items-center gap-1.5 transition-colors ${
+                      iconColor === c.value
+                        ? "bg-violet-500/15 border-violet-500/40 text-violet-300"
+                        : "border-border text-muted-foreground hover:text-foreground hover:border-white/20"
+                    }`}
+                  >
+                    {c.value && (
+                      <span
+                        className="w-2.5 h-2.5 rounded-full border border-black/20"
+                        style={{ backgroundColor: c.value }}
+                      />
+                    )}
+                    {c.label}
+                  </button>
+                ))}
+                <label className="h-8 px-2.5 rounded-full text-xs border border-border text-muted-foreground hover:text-foreground hover:border-white/20 cursor-pointer inline-flex items-center gap-1.5 transition-colors">
+                  <span
+                    className="w-2.5 h-2.5 rounded-full border border-black/20"
+                    style={{ backgroundColor: iconColor || "#8b5cf6" }}
+                  />
+                  <span>Custom</span>
+                  <input
+                    type="color"
+                    value={iconColor || "#8b5cf6"}
+                    onChange={(e) => setIconColor(e.target.value)}
+                    className="sr-only"
+                  />
+                </label>
+              </div>
+            </div>
+
+
 
             <ControlRow label="Size" value={`${size}px`}>
               <Slider

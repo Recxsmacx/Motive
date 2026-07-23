@@ -2,7 +2,7 @@ import { memo, useState } from "react";
 import { motion } from "framer-motion";
 import { TESTIDS } from "@/constants/testIds";
 
-function IconCard({ icon, onClick, index = 0 }) {
+function IconCard({ icon, onClick, index = 0, color }) {
   const [hover, setHover] = useState(false);
   const Comp = icon.component;
   return (
@@ -21,10 +21,11 @@ function IconCard({ icon, onClick, index = 0 }) {
       aria-label={`${icon.name} · ${icon.library}`}
     >
       <div className="flex-1 flex items-center justify-center pt-3">
-        <div className={hover ? "text-violet-500" : "text-foreground"} style={{ transition: "color 200ms" }}>
-          <Comp size={34} strokeWidth={1.6} active={hover} />
+        <div style={{ color: color || undefined, transition: "color 200ms" }} className={!color ? (hover ? "text-violet-500" : "text-foreground") : ""}>
+          <Comp size={34} strokeWidth={1.6} active={hover} color={color || "currentColor"} />
         </div>
       </div>
+
       <div className="w-full px-3 pb-3">
         <div className="text-[11px] font-medium text-foreground truncate text-center">
           {icon.name}
