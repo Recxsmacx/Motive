@@ -11,6 +11,7 @@ import {
   ANIMATION_TYPES,
   CATEGORIES,
 } from "@/registry/iconRegistry";
+import { useIconColor } from "@/context/IconColorContext";
 import { TESTIDS } from "@/constants/testIds";
 
 const ALL = "All";
@@ -20,8 +21,10 @@ export default function Icons() {
   const [library, setLibrary] = useState(ALL);
   const [category, setCategory] = useState(ALL);
   const [animation, setAnimation] = useState(ALL);
+  const { iconColor, setIconColor, resetIconColor } = useIconColor();
   const [selected, setSelected] = useState(null);
   const inputRef = useRef(null);
+
 
   // ⌘K / Ctrl+K to focus search
   useEffect(() => {
@@ -52,7 +55,18 @@ export default function Icons() {
     });
   }, [query, library, category, animation]);
 
-  const anyFilter = query || library !== ALL || category !== ALL || animation !== ALL;
+  const anyFilter = query || library !== ALL || category !== ALL || animation !== ALL || iconColor;
+
+  const COLOR_PRESETS = [
+    { label: "Default", value: "" },
+    { label: "Violet", value: "#8b5cf6" },
+    { label: "Sky", value: "#06b6d4" },
+    { label: "Emerald", value: "#10b981" },
+    { label: "Amber", value: "#f59e0b" },
+    { label: "Rose", value: "#f43f5e" },
+    { label: "Blue", value: "#3b82f6" },
+    { label: "White", value: "#ffffff" },
+  ];
 
   return (
     <div data-testid={TESTIDS.iconsPageRoot} className="min-h-screen bg-background text-foreground">
@@ -100,6 +114,7 @@ export default function Icons() {
                   setLibrary(ALL);
                   setCategory(ALL);
                   setAnimation(ALL);
+                  setIconColor("");
                 }}
                 className="inline-flex items-center gap-1.5 h-11 px-3 text-sm rounded-md border border-border text-muted-foreground hover:text-foreground"
               >
@@ -110,6 +125,49 @@ export default function Icons() {
 
           {/* Filter chips */}
           <div className="mt-6 space-y-3">
+            {/* Color Swatch Picker */}
+            <div className="flex items-center gap-3">
+              <div className="w-20 text-[10px] font-mono uppercase tracking-widest text-muted-foreground shrink-0">
+                Color
+              </div>
+              <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar pb-1">
+                {COLOR_PRESETS.map((preset) => (
+                  <button
+                    key={preset.label}
+                    onClick={() => setIconColor(preset.value)}
+                    className={`shrink-0 h-8 px-3 rounded-full text-xs border inline-flex items-center gap-2 transition-colors ${
+                      iconColor === preset.value
+                        ? "bg-violet-500/15 border-violet-500/40 text-violet-300"
+                        : "border-border text-muted-foreground hover:text-foreground hover:border-white/20"
+                    }`}
+                  >
+                    {preset.value && (
+                      <span
+                        className="w-2.5 h-2.5 rounded-full border border-black/20"
+                        style={{ backgroundColor: preset.value }}
+                      />
+                    )}
+                    {preset.label}
+                  </button>
+                ))}
+
+                {/* Custom Color Input */}
+                <label className="shrink-0 h-8 px-3 rounded-full text-xs border border-border text-muted-foreground hover:text-foreground hover:border-white/20 cursor-pointer inline-flex items-center gap-2 transition-colors">
+                  <span
+                    className="w-3 h-3 rounded-full border border-black/20 shadow-sm"
+                    style={{ backgroundColor: iconColor || "#8b5cf6" }}
+                  />
+                  <span>Custom</span>
+                  <input
+                    type="color"
+                    value={iconColor || "#8b5cf6"}
+                    onChange={(e) => setIconColor(e.target.value)}
+                    className="sr-only"
+                  />
+                </label>
+              </div>
+            </div>
+
             <FilterRow
               label="Library"
               options={[ALL, ...LIBRARIES]}
@@ -158,11 +216,12 @@ export default function Icons() {
             >
               <AnimatePresence mode="popLayout">
                 {filtered.map((icon, i) => (
-                  <IconCard key={icon.name} icon={icon} index={i} onClick={setSelected} />
+                  <IconCard key={icon.name} icon={icon} index={i} onClick={setSelected} color={iconColor} />
                 ))}
               </AnimatePresence>
             </div>
           )}
+
           <div className="mt-6 text-xs text-muted-foreground">
             Showing <span className="text-foreground font-medium">{filtered.length}</span> of{" "}
             {iconRegistry.length}
