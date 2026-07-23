@@ -74,3 +74,26 @@ export declare function AnimatedWifi(props: AnimatedIconProps): JSX.Element;
 export declare function AnimatedLoader(props: AnimatedIconProps): JSX.Element;
 export declare function AnimatedSun(props: AnimatedIconProps): JSX.Element;
 export declare function AnimatedMoon(props: AnimatedIconProps): JSX.Element;
+export declare function AnimatedGlobe(props: AnimatedIconProps): JSX.Element;
+export declare function AnimatedZap(props: AnimatedIconProps): JSX.Element;
+export declare function AnimatedShield(props: AnimatedIconProps): JSX.Element;
+export declare function AnimatedSparkles(props: AnimatedIconProps): JSX.Element;
+export declare function AnimatedShare(props: AnimatedIconProps): JSX.Element;
+export declare function AnimatedFlame(props: AnimatedIconProps): JSX.Element;
+export declare function AnimatedSliders(props: AnimatedIconProps): JSX.Element;
+export declare function AnimatedCamera(props: AnimatedIconProps): JSX.Element;
+export declare function AnimatedFilter(props: AnimatedIconProps): JSX.Element;
+export declare function AnimatedCompass(props: AnimatedIconProps): JSX.Element;
+export declare function AnimatedLayers(props: AnimatedIconProps): JSX.Element;
+export declare function AnimatedTag(props: AnimatedIconProps): JSX.Element;
+export declare function AnimatedCode(props: AnimatedIconProps): JSX.Element;
+export declare function AnimatedTerminal(props: AnimatedIconProps): JSX.Element;
+export declare function AnimatedDatabase(props: AnimatedIconProps): JSX.Element;
+export declare function AnimatedCpu(props: AnimatedIconProps): JSX.Element;
+export declare function AnimatedMaximize(props: AnimatedIconProps): JSX.Element;
+export declare function AnimatedMinimize(props: AnimatedIconProps): JSX.Element;
+export declare function AnimatedSmile(props: AnimatedIconProps): JSX.Element;
+export declare function AnimatedMessageSquare(props: AnimatedIconProps): JSX.Element;
+
+
+

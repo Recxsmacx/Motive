@@ -43,6 +43,26 @@ import {
   AnimatedLoader,
   AnimatedSun,
   AnimatedMoon,
+  AnimatedGlobe,
+  AnimatedZap,
+  AnimatedShield,
+  AnimatedSparkles,
+  AnimatedShare,
+  AnimatedFlame,
+  AnimatedSliders,
+  AnimatedCamera,
+  AnimatedFilter,
+  AnimatedCompass,
+  AnimatedLayers,
+  AnimatedTag,
+  AnimatedCode,
+  AnimatedTerminal,
+  AnimatedDatabase,
+  AnimatedCpu,
+  AnimatedMaximize,
+  AnimatedMinimize,
+  AnimatedSmile,
+  AnimatedMessageSquare,
 } from "rex-motive";
 
 export const CATEGORIES = [
@@ -105,7 +125,30 @@ export const iconRegistry = [
   { name: "Loader", library: "Phosphor", category: "Interface", tags: ["loading", "spinner", "wait"], animation: "Loop", description: "Smooth continuous rotation.", component: AnimatedLoader },
   { name: "Sun", library: "Lucide", category: "Interface", tags: ["light", "mode", "day"], animation: "Micro-interaction", description: "Expands and rotates slightly.", component: AnimatedSun },
   { name: "Moon", library: "Lucide", category: "Interface", tags: ["dark", "mode", "night"], animation: "Micro-interaction", description: "Rocks back and forth.", component: AnimatedMoon },
+  { name: "Globe", library: "Lucide", category: "Navigation", tags: ["world", "earth", "network", "browser", "global"], animation: "Morph", description: "Meridian curves revolve gracefully.", component: AnimatedGlobe },
+  { name: "Zap", library: "Lucide", category: "Actions", tags: ["lightning", "power", "flash", "energy", "fast"], animation: "Micro-interaction", description: "Energetic flash pop with subtle golden fill.", component: AnimatedZap },
+  { name: "Shield", library: "Lucide", category: "Interface", tags: ["security", "protect", "safe", "guard", "defense"], animation: "Draw", description: "Shield snaps firm as checkmark stroke draws.", component: AnimatedShield },
+  { name: "Sparkles", library: "Lucide", category: "Interface", tags: ["ai", "magic", "stars", "sparkle", "clean"], animation: "Micro-interaction", description: "Central star turns as side sparkles twinkle.", component: AnimatedSparkles },
+  { name: "Share", library: "Lucide", category: "Communication", tags: ["social", "send", "connect", "export", "link"], animation: "Directional", description: "Connecting nodes expand smoothly outward.", component: AnimatedShare },
+  { name: "Flame", library: "Phosphor", category: "Social", tags: ["fire", "trending", "hot", "burn", "warm"], animation: "Micro-interaction", description: "Phosphor flame with dancing inner sparks and glow.", component: AnimatedFlame },
+  { name: "Sliders", library: "Lucide", category: "Interface", tags: ["settings", "filter", "controls", "tune", "equalizer"], animation: "Directional", description: "Knobs slide along tracks with spring physics.", component: AnimatedSliders },
+  { name: "Camera", library: "Lucide", category: "Media", tags: ["photo", "picture", "capture", "shot", "snapshot"], animation: "Micro-interaction", description: "Camera recoils as lens expands with shutter flash.", component: AnimatedCamera },
+  { name: "Filter", library: "Lucide", category: "Interface", tags: ["funnel", "sort", "refine", "filter"], animation: "Micro-interaction", description: "Funnel tilts as liquid particles trickle down.", component: AnimatedFilter },
+  { name: "Compass", library: "Lucide", category: "Navigation", tags: ["explore", "direction", "navigate", "location", "north"], animation: "Micro-interaction", description: "Magnetic needle swings and settles toward North.", component: AnimatedCompass },
+  { name: "Layers", library: "Lucide", category: "Interface", tags: ["stack", "planes", "structure", "design"], animation: "Directional", description: "Stacked isometric planes lift apart with spring physics.", component: AnimatedLayers },
+  { name: "Tag", library: "Lucide", category: "Actions", tags: ["price", "label", "category", "badge", "sale"], animation: "Micro-interaction", description: "Hanging tag swings gracefully from its attachment hole.", component: AnimatedTag },
+  { name: "Code", library: "Lucide", category: "Development", tags: ["developer", "brackets", "syntax", "program"], animation: "Directional", description: "Code brackets spread apart dynamically.", component: AnimatedCode },
+  { name: "Terminal", library: "Lucide", category: "Development", tags: ["console", "command", "cli", "shell", "prompt"], animation: "Draw", description: "Command prompt arrow nudges while cursor line blinks.", component: AnimatedTerminal },
+  { name: "Database", library: "Development", category: "Development", tags: ["storage", "sql", "data", "server", "table"], animation: "Micro-interaction", description: "Storage cylinders expand with pulsing data ring transfer.", component: AnimatedDatabase },
+  { name: "Cpu", library: "Lucide", category: "Development", tags: ["processor", "chip", "hardware", "silicon", "ai"], animation: "Micro-interaction", description: "Silicon core glows while circuit pins pulse signal.", component: AnimatedCpu },
+  { name: "Maximize", library: "Lucide", category: "Interface", tags: ["expand", "fullscreen", "grow", "zoom"], animation: "Directional", description: "Corner arrows spring outward into full frame.", component: AnimatedMaximize },
+  { name: "Minimize", library: "Lucide", category: "Interface", tags: ["shrink", "compress", "small", "close"], animation: "Directional", description: "Corner arrows spring inward toward center.", component: AnimatedMinimize },
+  { name: "Smile", library: "Lucide", category: "Social", tags: ["happy", "emoji", "face", "like", "joy"], animation: "Micro-interaction", description: "Eyes blink in unison as smile curve bounces.", component: AnimatedSmile },
+  { name: "MessageSquare", library: "Lucide", category: "Communication", tags: ["chat", "comment", "bubble", "talk", "feedback"], animation: "Micro-interaction", description: "Speech bubble pops with 3 typing indicator dots.", component: AnimatedMessageSquare },
 ];
+
+
+
 
 export const iconBySlug = Object.fromEntries(
   iconRegistry.map((i) => [i.name.toLowerCase(), i]),
