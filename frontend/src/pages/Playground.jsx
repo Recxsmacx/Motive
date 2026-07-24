@@ -5,6 +5,7 @@ import Footer from "@/components/layout/Footer";
 import CodeBlock from "@/components/shared/CodeBlock";
 import { Slider } from "@/components/ui/slider";
 import { iconRegistry } from "@/registry/iconRegistry";
+import { useIconColor } from "@/context/IconColorContext";
 import { TESTIDS } from "@/constants/testIds";
 
 const TRIGGERS = ["hover", "click", "auto", "focus"];
@@ -14,9 +15,21 @@ export default function Playground() {
   const [trigger, setTrigger] = useState("hover");
   const [size, setSize] = useState(96);
   const [stroke, setStroke] = useState(1.75);
+  const { iconColor, setIconColor } = useIconColor();
   const [duration, setDuration] = useState(1);
   const [delay, setDelay] = useState(0);
   const [key, setKey] = useState(0);
+
+
+  const PG_COLORS = [
+    { label: "Default", value: "" },
+    { label: "Violet", value: "#8b5cf6" },
+    { label: "Sky", value: "#06b6d4" },
+    { label: "Emerald", value: "#10b981" },
+    { label: "Amber", value: "#f59e0b" },
+    { label: "Rose", value: "#f43f5e" },
+    { label: "Blue", value: "#3b82f6" },
+  ];
 
   const icon = useMemo(
     () => iconRegistry.find((i) => i.name === iconName) || iconRegistry[0],
@@ -25,13 +38,14 @@ export default function Playground() {
   const Comp = icon.component;
 
   const code = useMemo(() => {
+    const colorProp = iconColor ? `\n      color="${iconColor}"` : "";
     return `import { Animated${icon.name} } from "rex-motive";
 
 export default function Demo() {
   return (
     <Animated${icon.name}
       size={${size}}
-      strokeWidth={${stroke.toFixed(2)}}
+      strokeWidth={${stroke.toFixed(2)}}${colorProp}
       trigger="${trigger}"
       style={{
         animationDuration: "${duration.toFixed(2)}s",
@@ -40,7 +54,7 @@ export default function Demo() {
     />
   );
 }`;
-  }, [icon, size, stroke, trigger, duration, delay]);
+  }, [icon, size, stroke, trigger, iconColor, duration, delay]);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -119,6 +133,46 @@ export default function Demo() {
                 </div>
               </div>
 
+              {/* Color */}
+              <div>
+                <Label>Color</Label>
+                <div className="mt-2 flex items-center gap-1.5 flex-wrap">
+                  {PG_COLORS.map((c) => (
+                    <button
+                      key={c.label}
+                      onClick={() => setIconColor(c.value)}
+                      className={`h-8 px-2.5 rounded-full text-xs border inline-flex items-center gap-1.5 transition-colors ${
+                        iconColor === c.value
+                          ? "bg-violet-500/15 border-violet-500/40 text-violet-300"
+                          : "border-border text-muted-foreground hover:text-foreground hover:border-white/20"
+                      }`}
+                    >
+                      {c.value && (
+                        <span
+                          className="w-2.5 h-2.5 rounded-full border border-black/20"
+                          style={{ backgroundColor: c.value }}
+                        />
+                      )}
+                      {c.label}
+                    </button>
+                  ))}
+                  <label className="h-8 px-2.5 rounded-full text-xs border border-border text-muted-foreground hover:text-foreground hover:border-white/20 cursor-pointer inline-flex items-center gap-1.5 transition-colors">
+                    <span
+                      className="w-2.5 h-2.5 rounded-full border border-black/20"
+                      style={{ backgroundColor: iconColor || "#8b5cf6" }}
+                    />
+                    <span>Custom</span>
+                    <input
+                      type="color"
+                      value={iconColor || "#8b5cf6"}
+                      onChange={(e) => setIconColor(e.target.value)}
+                      className="sr-only"
+                    />
+                  </label>
+                </div>
+              </div>
+
+
               <ControlRow label="Size" value={`${size}px`}>
                 <Slider
                   data-testid={TESTIDS.pgSize}
@@ -179,14 +233,16 @@ export default function Demo() {
                 className="rounded-xl border border-border bg-[#0d0d12] relative overflow-hidden aspect-[16/10] md:aspect-[16/8] flex items-center justify-center"
               >
                 <div className="absolute inset-0 bg-grid bg-grid-fade opacity-60 pointer-events-none" />
-                <div className="text-violet-400">
+                <div className={!iconColor ? "text-violet-400" : ""} style={{ color: iconColor || undefined }}>
                   <Comp
                     key={key}
                     size={size}
                     strokeWidth={stroke}
+                    color={iconColor || undefined}
                     trigger={trigger}
                   />
                 </div>
+
                 <div className="absolute top-4 left-4 text-[10px] font-mono uppercase tracking-widest text-muted-foreground">
                   {icon.library} · {icon.animation}
                 </div>

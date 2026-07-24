@@ -65,10 +65,11 @@
     "zod": "3.24.4"
   },
   "scripts": {
-    "start": "craco start",
-    "build": "cd ../packages/motive-icons && yarn install && yarn build && cd ../../frontend && cp -rf ../packages/motive-icons/dist node_modules/rex-motive/ && craco build",
+    "start": "cd ../packages/motive-icons && yarn build && cd ../../frontend && cp -rf ../packages/motive-icons/dist node_modules/rex-motive/ && cp -rf ../packages/motive-icons/src node_modules/rex-motive/ && craco start",
+    "build": "cd ../packages/motive-icons && yarn install && yarn build && cd ../../frontend && cp -rf ../packages/motive-icons/dist node_modules/rex-motive/ && cp -rf ../packages/motive-icons/src node_modules/rex-motive/ && craco build",
     "test": "craco test"
   },
+
   "browserslist": {
     "production": [
       ">0.2%",
