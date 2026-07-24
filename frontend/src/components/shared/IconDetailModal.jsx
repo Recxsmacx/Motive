@@ -5,7 +5,9 @@ import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/compone
 import { Slider } from "@/components/ui/slider";
 import { Switch } from "@/components/ui/switch";
 import CodeBlock from "@/components/shared/CodeBlock";
+import { isIconNew } from "@/registry/iconRegistry";
 import { TESTIDS } from "@/constants/testIds";
+
 
 const TRIGGERS = ["Hover", "Click", "Auto", "Focus"];
 const BGS = [
@@ -115,7 +117,15 @@ export default function IconDetailModal({ icon, open, onOpenChange }) {
                 <div className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground">
                   {icon.library} · {icon.animation}
                 </div>
-                <h2 className="mt-1 text-2xl font-semibold tracking-tight">{icon.name}</h2>
+                <div className="flex items-center gap-2">
+                  <h2 className="mt-1 text-2xl font-semibold tracking-tight">{icon.name}</h2>
+                  {isIconNew(icon) && (
+                    <span className="mt-1 px-1.5 py-0.5 text-[9px] font-mono font-semibold uppercase tracking-wider rounded bg-violet-500/15 dark:bg-violet-500/20 text-violet-700 dark:text-violet-300 border border-violet-500/30">
+                      NEW
+                    </span>
+                  )}
+                </div>
+
                 <p className="mt-1.5 text-sm text-muted-foreground leading-relaxed max-w-sm">
                   {icon.description}
                 </p>
