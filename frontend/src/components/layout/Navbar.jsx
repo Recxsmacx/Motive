@@ -8,7 +8,7 @@ import { AnimatedSearch, AnimatedSun, AnimatedMoon, AnimatedMenu, AnimatedX } fr
 
 const NAV_ITEMS = [
   { to: "/icons", label: "Icons", tid: TESTIDS.navLinkIcons },
-  { to: "/docs", label: "Documentation", tid: TESTIDS.navLinkDocs },
+  { href: "https://motive-dedabf04.mintlify.app", label: "Documentation", tid: TESTIDS.navLinkDocs, external: true },
   { to: "/playground", label: "Playground", tid: TESTIDS.navLinkPlayground },
 ];
 
@@ -39,15 +39,30 @@ export default function Navbar({ onSearchClick }) {
           {/* Center nav */}
           <nav className="hidden md:flex items-center gap-1">
             {NAV_ITEMS.map((item) => {
-              const active = location.pathname === item.to;
+              const active = item.to && location.pathname === item.to;
+              const className = `relative px-3 py-2 text-sm rounded-md transition-colors ${
+                active ? "text-foreground" : "text-muted-foreground hover:text-foreground"
+              }`;
+              if (item.external) {
+                return (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    data-testid={item.tid}
+                    className={className}
+                  >
+                    {item.label}
+                  </a>
+                );
+              }
               return (
                 <Link
                   key={item.to}
                   to={item.to}
                   data-testid={item.tid}
-                  className={`relative px-3 py-2 text-sm rounded-md transition-colors ${
-                    active ? "text-foreground" : "text-muted-foreground hover:text-foreground"
-                  }`}
+                  className={className}
                 >
                   {item.label}
                   {active && (
@@ -129,16 +144,32 @@ export default function Navbar({ onSearchClick }) {
             className="md:hidden overflow-hidden border-t border-border"
           >
             <div className="px-5 py-4 flex flex-col gap-1">
-              {NAV_ITEMS.map((item) => (
-                <Link
-                  key={item.to}
-                  to={item.to}
-                  onClick={() => setMobileOpen(false)}
-                  className="px-3 py-2.5 rounded-md text-sm text-muted-foreground hover:text-foreground hover:bg-white/[0.04]"
-                >
-                  {item.label}
-                </Link>
-              ))}
+              {NAV_ITEMS.map((item) => {
+                if (item.external) {
+                  return (
+                    <a
+                      key={item.label}
+                      href={item.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      onClick={() => setMobileOpen(false)}
+                      className="px-3 py-2.5 rounded-md text-sm text-muted-foreground hover:text-foreground hover:bg-white/[0.04]"
+                    >
+                      {item.label}
+                    </a>
+                  );
+                }
+                return (
+                  <Link
+                    key={item.to}
+                    to={item.to}
+                    onClick={() => setMobileOpen(false)}
+                    className="px-3 py-2.5 rounded-md text-sm text-muted-foreground hover:text-foreground hover:bg-white/[0.04]"
+                  >
+                    {item.label}
+                  </Link>
+                );
+              })}
               <a
                 href="https://github.com/Recxsmacx/Motive"
                 target="_blank"

@@ -123,6 +123,21 @@ export default function Docs() {
           </p>
 
           <VerifiedBanner />
+
+          <div className="mt-6 p-4 rounded-xl border border-violet-500/30 bg-violet-500/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div>
+              <div className="text-xs font-semibold uppercase tracking-wider text-violet-400">Mintlify Docs Portal</div>
+              <p className="text-sm text-muted-foreground mt-0.5">Explore full interactive MDX guides, search, and AI assistant on Mintlify.</p>
+            </div>
+            <a
+              href="https://motive-dedabf04.mintlify.app"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 h-9 px-4 rounded-md bg-violet-600 hover:bg-violet-500 text-white text-xs font-medium shrink-0 transition-colors"
+            >
+              Open Mintlify Docs <ExternalLink className="w-3.5 h-3.5" />
+            </a>
+          </div>
         </div>
       </section>
 
