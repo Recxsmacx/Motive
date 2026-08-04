@@ -4,6 +4,9 @@ description: "Beautiful icons. Meaningful motion. Built for React."
 icon: "sparkles"
 ---
 
+import { AnimatedBellPreview } from "/snippets/AnimatedBellPreview.jsx";
+import { AnimatedHeartPreview } from "/snippets/AnimatedHeartPreview.jsx";
+
 <img className="block dark:hidden rounded-xl border border-zinc-200 shadow-sm" src="https://github.com/user-attachments/assets/4a108a2d-6989-4f38-b6c0-1d1f672afa2a" alt="Motive Animated Icons Hero" />
 <img className="hidden dark:block rounded-xl border border-zinc-800 shadow-md" src="https://github.com/user-attachments/assets/4a108a2d-6989-4f38-b6c0-1d1f672afa2a" alt="Motive Animated Icons Hero" />
 
@@ -12,10 +15,11 @@ icon: "sparkles"
 **Motive** (`rex-motive`) is a production-quality, open-source library of hand-crafted animated icons for React, powered by [Framer Motion](https://www.framer.com/motion/).
 
 Instead of applying uniform scale or rotation effects across every icon, Motive features **meaningful micro-interactions** tailored to each icon's real-world semantics:
-* 🔔 **Bells swing and ring** smoothly on notification alerts.
-* 🗑️ **Trash cans flip open** their lids on action.
-* 🏹 **Arrows travel and bounce** along vector vectors.
-* 🔒 **Locks latch and unlatch** smoothly.
+
+<div className="flex flex-wrap gap-4 my-6">
+  <AnimatedBellPreview label="Bell swings & rings on hover" />
+  <AnimatedHeartPreview label="Heart pulses on click" />
+</div>
 
 <Check>
 **Production Verified**: Every animation rendered in these docs and on the live site is driven by the exact same `rex-motive` React component package consumers ship.
@@ -33,7 +37,7 @@ Instead of applying uniform scale or rotation effects across every icon, Motive 
     Zero setup needed. Strongly-typed React components with straightforward prop triggers.
   </Card>
   <Card title="Controlled & Uncontrolled" icon="sliders">
-    Use intuitive triggers (`hover`, `click`, `auto`, `focus`) or own the active state directly from your parent component.
+    Use intuitive triggers (hover, click, auto, focus) or own the active state directly from your parent component.
   </Card>
   <Card title="100% Open Source" icon="code-branch">
     MIT licensed, contributor friendly. Add a new animated icon in three simple steps and ship it in one PR.
@@ -52,6 +56,6 @@ Instead of applying uniform scale or rotation effects across every icon, Motive 
     Learn how to trigger animations on hover, click, auto, or focus.
   </Card>
   <Card title="Props Reference" icon="code" href="/props-reference">
-    Explore the strongly-typed API props (`size`, `color`, `loop`, `active`).
+    Explore the strongly-typed API props (size, color, loop, active).
   </Card>
 </CardGroup>

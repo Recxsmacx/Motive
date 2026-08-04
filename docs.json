@@ -5,7 +5,7 @@
   "logo": {
     "dark": "/logo/dark.svg",
     "light": "/logo/light.svg",
-    "href": "https://motive-icons.com"
+    "href": "https://github.com/Recxsmacx/Motive"
   },
   "favicon": "/favicon.svg",
   "colors": {
@@ -21,16 +21,16 @@
   },
   "topbarLinks": [
     {
-      "name": "Live Gallery",
-      "url": "https://motive-icons.com"
+      "name": "Main Website",
+      "url": "https://github.com/Recxsmacx/Motive"
     },
     {
       "name": "Playground",
-      "url": "https://motive-icons.com/playground"
+      "url": "https://github.com/Recxsmacx/Motive"
     }
   ],
   "topbarCtaButton": {
-    "name": "GitHub",
+    "name": "GitHub Repo",
     "url": "https://github.com/Recxsmacx/Motive"
   },
   "navigation": {
