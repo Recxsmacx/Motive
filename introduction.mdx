@@ -7,8 +7,16 @@ icon: "sparkles"
 import { AnimatedBellPreview } from "/snippets/AnimatedBellPreview.jsx";
 import { AnimatedHeartPreview } from "/snippets/AnimatedHeartPreview.jsx";
 
-<img className="block dark:hidden rounded-xl border border-zinc-200 shadow-sm" src="https://github.com/user-attachments/assets/4a108a2d-6989-4f38-b6c0-1d1f672afa2a" alt="Motive Animated Icons Hero" />
-<img className="hidden dark:block rounded-xl border border-zinc-800 shadow-md" src="https://github.com/user-attachments/assets/4a108a2d-6989-4f38-b6c0-1d1f672afa2a" alt="Motive Animated Icons Hero" />
+<img
+  className="block rounded-xl border border-zinc-200 shadow-sm dark:hidden"
+  alt="Motive Animated Icons Hero"
+  src="https://github.com/user-attachments/assets/4a108a2d-6989-4f38-b6c0-1d1f672afa2a"
+/>
+<img
+  className="rounded-xl border border-zinc-200 shadow-sm hidden dark:block"
+  alt="Motive Animated Icons Hero"
+  src="https://github.com/user-attachments/assets/4a108a2d-6989-4f38-b6c0-1d1f672afa2a"
+/>
 
 ## Welcome to Motive
 
@@ -18,11 +26,12 @@ Instead of applying uniform scale or rotation effects across every icon, Motive 
 
 <div className="flex flex-wrap gap-4 my-6">
   <AnimatedBellPreview label="Bell swings & rings on hover" />
+
   <AnimatedHeartPreview label="Heart pulses on click" />
 </div>
 
 <Check>
-**Production Verified**: Every animation rendered in these docs and on the live site is driven by the exact same `rex-motive` React component package consumers ship.
+  **Production Verified**: Every animation rendered in these docs and on the live site is driven by the exact same `rex-motive` React component package consumers ship.
 </Check>
 
 ---
@@ -33,12 +42,15 @@ Instead of applying uniform scale or rotation effects across every icon, Motive 
   <Card title="Meaningful Motion" icon="wand-magic-sparkles">
     Each icon has a bespoke animation crafted specifically for its purpose—no generic scale or spin loops.
   </Card>
+
   <Card title="Copy & Ship" icon="rocket">
     Zero setup needed. Strongly-typed React components with straightforward prop triggers.
   </Card>
+
   <Card title="Controlled & Uncontrolled" icon="sliders">
     Use intuitive triggers (hover, click, auto, focus) or own the active state directly from your parent component.
   </Card>
+
   <Card title="100% Open Source" icon="code-branch">
     MIT licensed, contributor friendly. Add a new animated icon in three simple steps and ship it in one PR.
   </Card>
@@ -49,12 +61,14 @@ Instead of applying uniform scale or rotation effects across every icon, Motive 
 ## Quick Navigation
 
 <CardGroup cols={3}>
-  <Card title="Quickstart" icon="bolt" href="/quickstart">
+  <Card title="Quickstart" icon="angle-double-up" href="/quickstart">
     Get up and running in under 2 minutes with npm or yarn.
   </Card>
+
   <Card title="Triggers & Interaction" icon="hand-pointer" href="/triggers">
     Learn how to trigger animations on hover, click, auto, or focus.
   </Card>
+
   <Card title="Props Reference" icon="code" href="/props-reference">
     Explore the strongly-typed API props (size, color, loop, active).
   </Card>
