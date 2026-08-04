@@ -1,0 +1,54 @@
+---
+title: "Animation Triggers"
+description: "Control how and when micro-interactions fire."
+icon: "hand-pointer"
+---
+
+Motive supports four built-in trigger strategies to match any interaction design.
+
+## Trigger Modes
+
+<CardGroup cols={2}>
+  <Card title="hover (Default)" icon="arrow-pointer">
+    Animate while the user's mouse pointer is hovering over the icon or when keyboard focused.
+  </Card>
+  <Card title="click" icon="hand-back-fist">
+    Fires a one-shot spring animation on click or when activated with Enter / Spacebar.
+  </Card>
+  <Card title="auto" icon="rotate">
+    Animates continuously or immediately on component mount—perfect for loaders or spinners.
+  </Card>
+  <Card title="focus" icon="keyboard">
+    Triggers animation specifically when receiving keyboard focus for accessible UI flows.
+  </Card>
+</CardGroup>
+
+---
+
+## Code Examples
+
+```tsx TriggersDemo.tsx
+import { AnimatedBell, AnimatedTrash, AnimatedLoader, AnimatedLock } from "rex-motive";
+
+export default function TriggersDemo() {
+  return (
+    <div>
+      {/* Hover mode: Bell swings while hovered */}
+      <AnimatedBell trigger="hover" size={28} />
+
+      {/* Click mode: Trash lid pops open once on click */}
+      <AnimatedTrash trigger="click" size={28} />
+
+      {/* Auto mode: Loader spins continuously */}
+      <AnimatedLoader trigger="auto" loop={true} size={28} />
+
+      {/* Focus mode: Lock latches on focus */}
+      <AnimatedLock trigger="focus" size={28} />
+    </div>
+  );
+}
+```
+
+<Info>
+All micro-interactions automatically reset cleanly so subsequent hovers and clicks always re-trigger smoothly without stutter.
+</Info>

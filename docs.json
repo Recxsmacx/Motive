@@ -2,21 +2,71 @@
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
   "name": "Motive",
+  "logo": {
+    "dark": "/logo/dark.svg",
+    "light": "/logo/light.svg",
+    "href": "https://motive-icons.com"
+  },
+  "favicon": "/favicon.svg",
   "colors": {
     "primary": "#8B5CF6",
     "light": "#A78BFA",
     "dark": "#7C3AED"
   },
+  "assistant": {
+    "enabled": true
+  },
+  "seo": {
+    "indexing": "all"
+  },
+  "topbarLinks": [
+    {
+      "name": "Live Gallery",
+      "url": "https://motive-icons.com"
+    },
+    {
+      "name": "Playground",
+      "url": "https://motive-icons.com/playground"
+    }
+  ],
+  "topbarCtaButton": {
+    "name": "GitHub",
+    "url": "https://github.com/Recxsmacx/Motive"
+  },
   "navigation": {
     "tabs": [
       {
-        "tab": "Documentation",
+        "tab": "Getting Started",
         "groups": [
           {
-            "group": "Get Started",
-            "pages": [
-              "introduction"
-            ]
+            "group": "Overview",
+            "pages": ["introduction"]
+          },
+          {
+            "group": "Installation & Setup",
+            "pages": ["quickstart", "installation"]
+          }
+        ]
+      },
+      {
+        "tab": "Usage & Props",
+        "groups": [
+          {
+            "group": "Core Concepts",
+            "pages": ["usage", "triggers", "controlled-mode"]
+          },
+          {
+            "group": "API Reference",
+            "pages": ["props-reference", "exports"]
+          }
+        ]
+      },
+      {
+        "tab": "Contributing & Architecture",
+        "groups": [
+          {
+            "group": "Guides",
+            "pages": ["add-new-icon", "monorepo-setup"]
           }
         ]
       }

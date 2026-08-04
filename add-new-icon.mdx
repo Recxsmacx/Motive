@@ -1,0 +1,75 @@
+---
+title: "Adding a New Animated Icon"
+description: "Three-step guide to contributing a new animated icon to Motive."
+icon: "plus"
+---
+
+Adding a new animated icon to Motive takes only **3 edits**. Everything else (website gallery, search, filters, playground) picks it up automatically!
+
+<Steps>
+  <Step title="1. Create the Animated Component">
+    Create a new component file in `packages/motive-icons/src/animations/`:
+
+    ```tsx packages/motive-icons/src/animations/AnimatedRocket.jsx
+    import { motion } from "framer-motion";
+    import IconShell from "../IconShell";
+
+    export default function AnimatedRocket(props) {
+      return (
+        <IconShell {...props} label="Rocket">
+          {() => (
+            <motion.g
+              style={{ originX: "12px", originY: "22px" }}
+              variants={{
+                inactive: { y: 0 },
+                active: {
+                  y: [0, -4, 0],
+                  transition: { duration: 0.5, ease: [0.34, 1.56, 0.64, 1] },
+                },
+              }}
+            >
+              {/* Replace with your SVG paths — fits 24×24 viewBox */}
+              <path d="M12 2l4 8h-8l4-8z" />
+              <path d="M8 10v8l4 4 4-4v-8" />
+            </motion.g>
+          )}
+        </IconShell>
+      );
+    }
+    ```
+  </Step>
+
+  <Step title="2. Export from Package Barrel & Types">
+    Export your component in `packages/motive-icons/src/index.js` and `index.d.ts`:
+
+    ```js packages/motive-icons/src/index.js
+    export { default as AnimatedRocket } from "./animations/AnimatedRocket";
+    ```
+
+    ```ts packages/motive-icons/src/index.d.ts
+    export declare function AnimatedRocket(props: AnimatedIconProps): JSX.Element;
+    ```
+  </Step>
+
+  <Step title="3. Register on the Website">
+    Add an entry to `frontend/src/registry/iconRegistry.js`:
+
+    ```js frontend/src/registry/iconRegistry.js
+    import { AnimatedRocket } from "rex-motive";
+
+    iconRegistry.push({
+      name: "Rocket",
+      library: "Lucide",
+      category: "Interface",
+      tags: ["launch", "start"],
+      animation: "Directional",
+      description: "Rocket lifts off with a subtle bounce.",
+      component: AnimatedRocket,
+    });
+    ```
+  </Step>
+</Steps>
+
+<Check>
+Once registered, rebuild the package with `./scripts/bootstrap.sh` and your new icon will immediately appear in the gallery, playground, and search!
+</Check>

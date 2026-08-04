@@ -1,0 +1,63 @@
+---
+title: "Quickstart"
+description: "Get started with Motive in your React application."
+icon: "bolt"
+---
+
+Follow these steps to install `rex-motive` and add animated icons to your project.
+
+<Steps>
+  <Step title="Install the package">
+    Install `rex-motive` along with `framer-motion` (required peer dependency) using your package manager of choice:
+
+    <CodeGroup>
+      ```bash yarn
+      yarn add rex-motive framer-motion
+      ```
+      ```bash npm
+      npm install rex-motive framer-motion
+      ```
+      ```bash pnpm
+      pnpm add rex-motive framer-motion
+      ```
+    </CodeGroup>
+  </Step>
+
+  <Step title="Import an animated icon">
+    Import your desired animated icon from `rex-motive` into any React component:
+
+    ```tsx
+    import { AnimatedBell, AnimatedHeart } from "rex-motive";
+
+    export default function NotificationsHeader() {
+      return (
+        <div style={{ display: "flex", gap: "16px", alignItems: "center" }}>
+          <AnimatedBell size={24} trigger="hover" />
+          <AnimatedHeart size={24} trigger="click" color="#ef4444" />
+        </div>
+      );
+    }
+    ```
+  </Step>
+
+  <Step title="Customize triggers & styles">
+    Adjust `size`, `strokeWidth`, `color`, and `trigger` mode to fit your brand and design system!
+
+    <Tip>
+      Hover over icons or click them in your UI to see the micro-interactions spring to life!
+    </Tip>
+  </Step>
+</Steps>
+
+---
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Explore Triggers" icon="hand-pointer" href="/triggers">
+    Learn how hover, click, auto, and focus triggers work.
+  </Card>
+  <Card title="Props Reference" icon="sliders" href="/props-reference">
+    Detailed prop definitions for size, stroke width, active state, and accessibility.
+  </Card>
+</CardGroup>

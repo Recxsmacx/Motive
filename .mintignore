@@ -1,0 +1,11 @@
+frontend/
+backend/
+packages/
+memory/
+scripts/
+tests/
+test_reports/
+.agents/
+design_guidelines.json
+test_result.md
+*.tgz

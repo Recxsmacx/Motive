@@ -1,0 +1,62 @@
+---
+title: "Props Reference"
+description: "Complete API specification for all Motive animated icons."
+icon: "sliders"
+---
+
+All animated icon components (`<AnimatedBell />`, `<AnimatedHeart />`, etc.) inherit the universal `AnimatedIconProps` interface.
+
+## Component Props
+
+<ParamField body="size" type="number" default="24">
+  Icon width and height in pixels.
+</ParamField>
+
+<ParamField body="strokeWidth" type="number" default="2">
+  Stroke thickness for the underlying vector paths.
+</ParamField>
+
+<ParamField body="color" type="string" default="currentColor">
+  Stroke color string. Defaults to inheriting CSS text color (`currentColor`).
+</ParamField>
+
+<ParamField body="trigger" type="string" default="hover">
+  Trigger mode strategy:
+  * `"hover"`: Animates while pointer is hovering or element is focused.
+  * `"click"`: Fires one-shot spring animation on click or Space/Enter key.
+  * `"auto"`: Animates immediately on mount.
+  * `"focus"`: Triggers specifically when element receives keyboard focus.
+</ParamField>
+
+<ParamField body="loop" type="boolean" default="false">
+  When set to `true`, the animation loops infinitely while active.
+</ParamField>
+
+<ParamField body="active" type="boolean | undefined" default="undefined">
+  Bypasses internal trigger state to give parent component full control over animation state.
+</ParamField>
+
+<ParamField body="ariaLabel" type="string" default="icon name">
+  Accessibility label passed to `aria-label` on the wrapper SVG element.
+</ParamField>
+
+<ParamField body="className" type="string" default='""'>
+  Custom CSS class names applied to the outer container wrapper.
+</ParamField>
+
+---
+
+## TypeScript Declaration
+
+```ts index.d.ts
+export interface AnimatedIconProps extends React.SVGProps<SVGSVGElement> {
+  size?: number;
+  strokeWidth?: number;
+  color?: string;
+  trigger?: "hover" | "click" | "auto" | "focus";
+  loop?: boolean;
+  active?: boolean;
+  ariaLabel?: string;
+  className?: string;
+}
+```

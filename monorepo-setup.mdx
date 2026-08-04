@@ -1,0 +1,43 @@
+---
+title: "Monorepo Architecture"
+description: "Understanding the repository structure, local package link, and scripts."
+icon: "sitemap"
+---
+
+Motive is structured as a monorepo containing the publishable npm package (`packages/motive-icons`) and the React showcase web application (`frontend/`).
+
+## Directory Structure
+
+```
+/motive
+├── packages/motive-icons/     # The publishable npm package (33 animated icons)
+│   ├── src/
+│   │   ├── IconShell.jsx      # Universal wrapper w/ controlled active state
+│   │   ├── hooks/             # useIconTrigger — hover/click/auto/focus
+│   │   ├── animations/        # 33 hand-crafted <AnimatedXxx /> components
+│   │   ├── index.js           # Barrel exports
+│   │   └── index.d.ts         # TypeScript declarations
+│   ├── dist/                  # Built ESM + CJS + .d.ts
+│   └── tsup.config.js         # Build configuration
+│
+├── frontend/                  # Showcase website (React + React Router + Tailwind)
+│   ├── src/
+│   │   ├── pages/             # Home · Icons · Playground · Docs
+│   │   └── registry/          # Central iconRegistry
+│   └── package.json
+```
+
+---
+
+## One-Command Bootstrap
+
+The website imports the built package tarball from `packages/motive-icons`. The bootstrap script compiles the package, packs the tarball, copies it to `frontend/public/`, and installs website dependencies:
+
+```bash
+# Bootstrap entire project
+./scripts/bootstrap.sh
+
+# Start dev server
+cd frontend
+yarn start
+```

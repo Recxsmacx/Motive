@@ -1,0 +1,48 @@
+---
+title: "Controlled Mode"
+description: "Bypass built-in triggers and manage active animation states from parent components."
+icon: "sliders"
+---
+
+## Overview
+
+When building complex cards, buttons, or navigation menus, you often want the **entire container** to trigger the icon's animation when hovered or active—rather than requiring the user to hover directly over the small 24px icon target.
+
+By passing the `active` prop directly to any Motive component, you bypass internal listeners and give full control to the parent component.
+
+---
+
+## Controlled Card Example
+
+```tsx ControlledCard.tsx
+import { useState } from "react";
+import { AnimatedHeart } from "rex-motive";
+
+export function FavoriteCard({ title, description }) {
+  const [isHovered, setIsHovered] = useState(false);
+
+  return (
+    <div
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      className="p-6 rounded-xl border border-zinc-800 bg-zinc-900 hover:border-violet-500 transition-colors cursor-pointer flex items-center justify-between"
+    >
+      <div>
+        <h3 className="font-semibold text-white">{title}</h3>
+        <p className="text-sm text-zinc-400">{description}</p>
+      </div>
+
+      {/* Parent controls active state directly */}
+      <AnimatedHeart
+        active={isHovered}
+        size={28}
+        color={isHovered ? "#ef4444" : "#a1a1aa"}
+      />
+    </div>
+  );
+}
+```
+
+<Tip>
+When using `active={boolean}`, the `trigger` prop is ignored in favor of your boolean state!
+</Tip>

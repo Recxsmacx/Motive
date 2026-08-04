@@ -1,0 +1,42 @@
+---
+title: "Installation & Requirements"
+description: "Detailed package setup, peer dependencies, and bundle specs."
+icon: "download"
+---
+
+## Requirements
+
+Motive is designed for modern React web applications (React 18+).
+
+| Requirement | Supported Version | Notes |
+| :--- | :--- | :--- |
+| **React** | `^18.0.0` or `^19.0.0` | Peer dependency |
+| **React DOM** | `^18.0.0` or `^19.0.0` | Peer dependency |
+| **Framer Motion** | `^10.0.0` or `^11.0.0` | Peer dependency for vector animations |
+
+<Note>
+`rex-motive` is shipped as a zero-runtime overhead module with zero third-party dependencies except for `framer-motion` as a peer dependency.
+</Note>
+
+---
+
+## Package Formats
+
+The package exports hand-written TypeScript definitions (`.d.ts`), Dual ESM (`.js`) and CommonJS (`.cjs`) builds out of the box:
+
+```json package.json
+{
+  "name": "rex-motive",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts"
+}
+```
+
+<Accordion title="Troubleshooting Framer Motion Peer Dependency">
+If your package manager warns about missing peer dependencies, ensure `framer-motion` is installed at the root of your application:
+
+```bash
+yarn add framer-motion@^11.0.0
+```
+</Accordion>

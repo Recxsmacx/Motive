@@ -1,0 +1,41 @@
+---
+title: "Basic Usage"
+description: "How to import and render Motive animated icons in JSX."
+icon: "code"
+---
+
+## Basic Rendering
+
+Every icon component in Motive is a strongly-typed React component that wraps SVG geometry with smooth Framer Motion spring physics.
+
+```tsx App.tsx
+import { AnimatedBell, AnimatedHeart, AnimatedSearch } from "rex-motive";
+
+export default function App() {
+  return (
+    <div className="icon-grid">
+      <AnimatedBell size={24} trigger="hover" />
+      <AnimatedHeart size={24} trigger="click" color="#ef4444" />
+      <AnimatedSearch size={24} trigger="hover" strokeWidth={1.75} />
+    </div>
+  );
+}
+```
+
+---
+
+## Styling & Custom Colors
+
+Motive icons inherit text color (`stroke="currentColor"`) by default, making them effortlessly adapt to light and dark themes or CSS classes.
+
+```tsx StylingExample.tsx
+// Tailwind CSS styling
+<AnimatedBell className="text-violet-500 hover:text-violet-400 transition-colors" size={32} />
+
+// Explicit color prop override
+<AnimatedHeart color="#ec4899" size={28} />
+```
+
+<Tip>
+Use `className` or Tailwind classes like `text-primary` or `hover:text-accent` for dynamic theme responsiveness!
+</Tip>
