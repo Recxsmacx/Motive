@@ -1,4 +1,6 @@
 {
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
   "name": "Motive",
   "logo": {
     "dark": "/logo/dark.svg",
