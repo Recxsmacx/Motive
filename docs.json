@@ -5,7 +5,7 @@
   "logo": {
     "dark": "/logo/dark.svg",
     "light": "/logo/light.svg",
-    "href": "https://github.com/Recxsmacx/Motive"
+    "href": "https://motive-ivory.vercel.app"
   },
   "favicon": "/favicon.svg",
   "colors": {
@@ -22,11 +22,15 @@
   "topbarLinks": [
     {
       "name": "Main Website",
-      "url": "https://github.com/Recxsmacx/Motive"
+      "url": "https://motive-ivory.vercel.app"
+    },
+    {
+      "name": "Icon Gallery",
+      "url": "https://motive-ivory.vercel.app/icons"
     },
     {
       "name": "Playground",
-      "url": "https://github.com/Recxsmacx/Motive"
+      "url": "https://motive-ivory.vercel.app/playground"
     }
   ],
   "topbarCtaButton": {

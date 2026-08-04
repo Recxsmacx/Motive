@@ -1,11 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 32" height="32" fill="none">
-  <rect width="28" height="28" y="2" rx="7" fill="url(#grad_light)" />
-  <rect x="8" y="10" width="12" height="12" rx="2.5" fill="#ffffff" transform="rotate(45 14 16)" />
-  <text x="38" y="22" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="18" fill="#0f172a" letter-spacing="-0.5">Motive</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 32" width="160" height="32" fill="none">
   <defs>
-    <linearGradient id="grad_light" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="violet-grad-light" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#8b5cf6" />
       <stop offset="100%" stop-color="#6d28d9" />
     </linearGradient>
   </defs>
+  <!-- Icon container -->
+  <rect width="28" height="28" x="0" y="2" rx="6" fill="url(#violet-grad-light)" />
+  <!-- Inner rotated diamond matching landing page -->
+  <rect width="12" height="12" x="8" y="10" rx="2" fill="#ffffff" transform="rotate(45 14 16)" />
+  <!-- Brand text -->
+  <text x="36" y="21" font-family="-apple-system, BlinkMacSystemFont, 'Satoshi', sans-serif" font-weight="600" font-size="15" fill="#0f172a" letter-spacing="-0.025em">Motive</text>
+  <!-- Version badge -->
+  <rect x="92" y="7" width="34" height="18" rx="4" fill="rgba(15,23,42,0.05)" stroke="rgba(15,23,42,0.15)" stroke-width="1" />
+  <text x="109" y="19.5" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="10" fill="#64748b" text-anchor="middle">v0.1</text>
 </svg>
