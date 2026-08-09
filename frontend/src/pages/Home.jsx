@@ -303,7 +303,7 @@ export default function Notifications() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-px bg-border rounded-xl overflow-hidden border border-border">
+          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-px bg-border rounded-xl border border-border">
             {iconRegistry.slice(0, 24).map((icon, i) => (
               <IconCard key={icon.name} icon={icon} index={i} onClick={setSelected} />
             ))}

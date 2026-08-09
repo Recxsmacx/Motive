@@ -84,11 +84,11 @@ export default function IconDetailModal({ icon, open, onOpenChange }) {
         </DialogDescription>
         <div className="grid grid-cols-1 md:grid-cols-[1.1fr_1fr]">
           {/* Preview */}
-          <div className="relative border-b md:border-b-0 md:border-r border-border">
-            <div className={`relative aspect-square md:aspect-auto md:h-full flex items-center justify-center ${bgClass}`}>
+          <div className="relative border-b md:border-b-0 md:border-r border-border overflow-visible">
+            <div className={`relative aspect-square md:aspect-auto md:h-full flex items-center justify-center overflow-visible ${bgClass}`}>
               <div
                 data-testid={TESTIDS.modalPreview}
-                className={!iconColor ? (bg === "light" ? "text-violet-600" : "text-violet-400") : ""}
+                className={`overflow-visible relative ${!iconColor ? (bg === "light" ? "text-violet-600" : "text-violet-400") : ""}`}
                 style={{ color: iconColor || undefined }}
               >
                 <Comp

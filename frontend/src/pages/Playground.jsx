@@ -230,10 +230,10 @@ export default function Demo() {
             <div className="space-y-6">
               <div
                 data-testid={TESTIDS.pgPreview}
-                className="rounded-xl border border-border bg-[#0d0d12] relative overflow-hidden aspect-[16/10] md:aspect-[16/8] flex items-center justify-center"
+                className="rounded-xl border border-border bg-[#0d0d12] relative overflow-visible aspect-[16/10] md:aspect-[16/8] flex items-center justify-center"
               >
-                <div className="absolute inset-0 bg-grid bg-grid-fade opacity-60 pointer-events-none" />
-                <div className={!iconColor ? "text-violet-400" : ""} style={{ color: iconColor || undefined }}>
+                <div className="absolute inset-0 bg-grid bg-grid-fade opacity-60 pointer-events-none rounded-xl overflow-hidden" />
+                <div className={`overflow-visible relative ${!iconColor ? "text-violet-400" : ""}`} style={{ color: iconColor || undefined }}>
                   <Comp
                     key={key}
                     size={size}
