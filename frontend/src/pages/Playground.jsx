@@ -14,7 +14,7 @@ export default function Playground() {
   const [iconName, setIconName] = useState("Bell");
   const [trigger, setTrigger] = useState("hover");
   const [size, setSize] = useState(96);
-  const [stroke, setStroke] = useState(1.75);
+  const [stroke, setStroke] = useState(0.8);
   const { iconColor, setIconColor } = useIconColor();
   const [duration, setDuration] = useState(1);
   const [delay, setDelay] = useState(0);

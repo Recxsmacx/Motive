@@ -41,7 +41,7 @@ Every animated icon accepts the same props:
 | Prop          | Type                                       | Default          | Description                                                       |
 | ------------- | ------------------------------------------ | ---------------- | ----------------------------------------------------------------- |
 | `size`        | `number`                                   | `24`             | Pixel size of the SVG.                                            |
-| `strokeWidth` | `number`                                   | `2`              | SVG stroke width.                                                 |
+| `strokeWidth` | `number`                                   | `0.8`            | SVG stroke width.                                                 |
 | `color`       | `string`                                   | `"currentColor"` | Any CSS color.                                                    |
 | `trigger`     | `"hover" \| "click" \| "auto" \| "focus"` | `"hover"`        | When to run the animation.                                        |
 | `loop`        | `boolean`                                  | `false`          | Loop the animation while active.                                  |

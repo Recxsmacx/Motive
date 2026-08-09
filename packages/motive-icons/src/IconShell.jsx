@@ -14,7 +14,7 @@ import { useIconTrigger } from "./hooks/useIconTrigger";
  */
 export default function IconShell({
   size = 24,
-  strokeWidth = 2,
+  strokeWidth = 0.8,
   color = "currentColor",
   trigger = "hover",
   loop = false,

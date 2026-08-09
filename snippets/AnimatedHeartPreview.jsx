@@ -7,7 +7,7 @@ export const AnimatedHeartPreview = ({ size = 28, label = "Click me" }) => {
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
-        strokeWidth="2"
+        strokeWidth="0.8"
         strokeLinecap="round"
         strokeLinejoin="round"
         className="transition-transform duration-300 group-hover:scale-125"

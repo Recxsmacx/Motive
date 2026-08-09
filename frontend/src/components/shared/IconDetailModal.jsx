@@ -27,7 +27,7 @@ function buildCode({ name, trigger, size, stroke, loop, color }) {
 export default function IconDetailModal({ icon, open, onOpenChange }) {
   const [trigger, setTrigger] = useState("Hover");
   const [size, setSize] = useState(64);
-  const [stroke, setStroke] = useState(1.75);
+  const [stroke, setStroke] = useState(0.8);
   const { iconColor, setIconColor } = useIconColor();
   const [speed, setSpeed] = useState(1);
   const [loop, setLoop] = useState(false);
@@ -48,7 +48,7 @@ export default function IconDetailModal({ icon, open, onOpenChange }) {
     if (open) {
       setTrigger("Hover");
       setSize(64);
-      setStroke(1.75);
+      setStroke(0.8);
       setSpeed(1);
       setLoop(false);
       setBg("grid");

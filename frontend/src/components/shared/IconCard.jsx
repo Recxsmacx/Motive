@@ -33,7 +33,7 @@ function IconCard({ icon, onClick, index = 0, color }) {
 
       <div className="flex-1 flex items-center justify-center pt-3 overflow-visible relative z-10">
         <div style={{ color: color || undefined, transition: "color 200ms" }} className={`overflow-visible relative ${!color ? (hover ? "text-violet-500" : "text-foreground") : ""}`}>
-          <Comp size={34} strokeWidth={1.6} active={hover} color={color || "currentColor"} />
+          <Comp size={34} strokeWidth={0.8} active={hover} color={color || "currentColor"} />
         </div>
       </div>
 

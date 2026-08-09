@@ -62,7 +62,7 @@ export default function Notifications() {
   return (
     <AnimatedBell
       size={24}
-      strokeWidth={1.75}
+      strokeWidth={0.8}
       trigger="${codeTrigger}"
     />
   );
@@ -405,7 +405,7 @@ function ValueCard({ index, title, body }) {
 
 function LivePreviewBell({ trigger }) {
   const Comp = iconRegistry.find((i) => i.name === "Bell").component;
-  return <Comp size={72} strokeWidth={1.5} trigger={trigger} key={trigger} />;
+  return <Comp size={72} strokeWidth={0.8} trigger={trigger} key={trigger} />;
 }
 
 function HeroGrid({ pointer, onSelect }) {
@@ -444,7 +444,7 @@ function HeroCell({ icon, active, onSelect }) {
       aria-label={icon.name}
     >
       <div className={active ? "text-violet-400" : "text-zinc-500"} style={{ transition: "color 220ms" }}>
-        <Comp size={24} strokeWidth={1.6} active={active} />
+        <Comp size={24} strokeWidth={0.8} active={active} />
       </div>
     </button>
   );

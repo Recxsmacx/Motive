@@ -29,7 +29,7 @@ export default function App() {
 
 const propsSample = `<AnimatedBell
   size={32}
-  strokeWidth={1.75}
+  strokeWidth={0.8}
   color="#8b5cf6"
   trigger="hover"     // "hover" | "click" | "auto" | "focus"
   loop={false}
@@ -176,7 +176,7 @@ export default function Docs() {
           <div className="mt-4 rounded-lg border border-border bg-[#0d0d12] p-6 flex items-center justify-center gap-8">
             <div className="text-center">
               <div className="text-violet-400 flex justify-center">
-                <AnimatedBell size={40} trigger="hover" strokeWidth={1.75} />
+                <AnimatedBell size={40} trigger="hover" strokeWidth={0.8} />
               </div>
               <div className="mt-3 text-[10px] font-mono uppercase tracking-widest text-muted-foreground">
                 Bell · hover
@@ -184,7 +184,7 @@ export default function Docs() {
             </div>
             <div className="text-center">
               <div className="text-violet-400 flex justify-center">
-                <AnimatedHeart size={40} trigger="click" strokeWidth={1.75} />
+                <AnimatedHeart size={40} trigger="click" strokeWidth={0.8} />
               </div>
               <div className="mt-3 text-[10px] font-mono uppercase tracking-widest text-muted-foreground">
                 Heart · click me
@@ -192,7 +192,7 @@ export default function Docs() {
             </div>
             <div className="text-center">
               <div className="text-violet-400 flex justify-center">
-                <AnimatedLoader size={40} strokeWidth={1.75} />
+                <AnimatedLoader size={40} strokeWidth={0.8} />
               </div>
               <div className="mt-3 text-[10px] font-mono uppercase tracking-widest text-muted-foreground">
                 Loader · auto
@@ -216,7 +216,7 @@ export default function Docs() {
               <tbody className="divide-y divide-border/60">
                 {[
                   ["size", "number", "24"],
-                  ["strokeWidth", "number", "2"],
+                  ["strokeWidth", "number", "0.8"],
                   ["color", "string", '"currentColor"'],
                   ["trigger", '"hover" | "click" | "auto" | "focus"', '"hover"'],
                   ["loop", "boolean", "false"],
