@@ -6,13 +6,15 @@ export default function AnimatedSend(props) {
     <IconShell {...props} label="Send">
       {() => (
         <motion.g
+          style={{ originX: "12px", originY: "12px" }}
           variants={{
-            inactive: { x: 0, y: 0, opacity: 1 },
+            inactive: { x: 0, y: 0, rotate: 0, scale: 1 },
             active: {
-              x: [0, 6, -20, 0],
-              y: [0, -6, 20, 0],
-              opacity: [1, 1, 0, 1],
-              transition: { duration: 0.75, times: [0, 0.4, 0.55, 1] },
+              x: [0, 4, 0],
+              y: [0, -4, 0],
+              rotate: [0, -8, 0],
+              scale: [1, 1.06, 1],
+              transition: { duration: 0.55, ease: "easeInOut" },
             },
           }}
         >

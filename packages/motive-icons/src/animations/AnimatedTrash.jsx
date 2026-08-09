@@ -26,9 +26,9 @@ export default function AnimatedTrash(props) {
           <motion.path
             d="M10 11v6"
             variants={{
-              inactive: { pathLength: 1, opacity: 1 },
+              inactive: { opacity: 1 },
               active: {
-                opacity: [1, 0.4, 1],
+                opacity: [1, 1],
                 transition: { duration: 0.9 },
               },
             }}
@@ -36,10 +36,10 @@ export default function AnimatedTrash(props) {
           <motion.path
             d="M14 11v6"
             variants={{
-              inactive: { pathLength: 1, opacity: 1 },
+              inactive: { opacity: 1 },
               active: {
-                opacity: [1, 0.4, 1],
-                transition: { duration: 0.9, delay: 0.05 },
+                opacity: [1, 1],
+                transition: { duration: 0.9 },
               },
             }}
           />

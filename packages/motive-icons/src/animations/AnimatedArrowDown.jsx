@@ -7,11 +7,10 @@ export default function AnimatedArrowDown(props) {
       {() => (
         <motion.g
           variants={{
-            inactive: { y: 0, opacity: 1 },
+            inactive: { y: 0 },
             active: {
-              y: [0, 6, -6, 0],
-              opacity: [1, 1, 0, 1],
-              transition: { duration: 0.55, times: [0, 0.4, 0.5, 1] },
+              y: [0, 4, 0],
+              transition: { duration: 0.45, ease: "easeInOut" },
             },
           }}
         >
