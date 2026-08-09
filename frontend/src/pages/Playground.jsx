@@ -14,7 +14,7 @@ export default function Playground() {
   const [iconName, setIconName] = useState("Bell");
   const [trigger, setTrigger] = useState("hover");
   const [size, setSize] = useState(96);
-  const [stroke, setStroke] = useState(1.75);
+  const [stroke, setStroke] = useState(0.8);
   const { iconColor, setIconColor } = useIconColor();
   const [duration, setDuration] = useState(1);
   const [delay, setDelay] = useState(0);
@@ -230,10 +230,10 @@ export default function Demo() {
             <div className="space-y-6">
               <div
                 data-testid={TESTIDS.pgPreview}
-                className="rounded-xl border border-border bg-[#0d0d12] relative overflow-hidden aspect-[16/10] md:aspect-[16/8] flex items-center justify-center"
+                className="rounded-xl border border-border bg-[#0d0d12] relative overflow-visible aspect-[16/10] md:aspect-[16/8] flex items-center justify-center"
               >
-                <div className="absolute inset-0 bg-grid bg-grid-fade opacity-60 pointer-events-none" />
-                <div className={!iconColor ? "text-violet-400" : ""} style={{ color: iconColor || undefined }}>
+                <div className="absolute inset-0 bg-grid bg-grid-fade opacity-60 pointer-events-none rounded-xl overflow-hidden" />
+                <div className={`overflow-visible relative ${!iconColor ? "text-violet-400" : ""}`} style={{ color: iconColor || undefined }}>
                   <Comp
                     key={key}
                     size={size}

@@ -212,7 +212,7 @@ export default function Icons() {
           ) : (
             <div
               data-testid={TESTIDS.iconsGrid}
-              className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-px bg-border rounded-xl overflow-hidden border border-border"
+              className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-px bg-border rounded-xl border border-border"
             >
               <AnimatePresence mode="popLayout">
                 {filtered.map((icon, i) => (

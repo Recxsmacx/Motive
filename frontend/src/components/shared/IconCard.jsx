@@ -20,7 +20,9 @@ function IconCard({ icon, onClick, index = 0, color }) {
       initial={{ opacity: 0, y: 6 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.35, delay: Math.min(index * 0.012, 0.4) }}
-      className="group relative aspect-square flex flex-col items-center justify-center gap-3 bg-background hover:bg-white/[0.03] dark:hover:bg-white/[0.03] outline-none focus-visible:ring-2 focus-visible:ring-violet-500/60 focus-visible:ring-inset transition-colors text-foreground"
+      className={`group aspect-square flex flex-col items-center justify-center gap-3 bg-background hover:bg-white/[0.03] dark:hover:bg-white/[0.03] outline-none focus-visible:ring-2 focus-visible:ring-violet-500/60 focus-visible:ring-inset transition-colors text-foreground overflow-visible ${
+        hover ? "z-20 relative" : "relative z-0"
+      }`}
       aria-label={`${icon.name} · ${icon.library}`}
     >
       {isNew && (
@@ -29,9 +31,9 @@ function IconCard({ icon, onClick, index = 0, color }) {
         </span>
       )}
 
-      <div className="flex-1 flex items-center justify-center pt-3">
-        <div style={{ color: color || undefined, transition: "color 200ms" }} className={!color ? (hover ? "text-violet-500" : "text-foreground") : ""}>
-          <Comp size={34} strokeWidth={1.6} active={hover} color={color || "currentColor"} />
+      <div className="flex-1 flex items-center justify-center pt-3 overflow-visible relative z-10">
+        <div style={{ color: color || undefined, transition: "color 200ms" }} className={`overflow-visible relative ${!color ? (hover ? "text-violet-500" : "text-foreground") : ""}`}>
+          <Comp size={34} strokeWidth={0.8} active={hover} color={color || "currentColor"} />
         </div>
       </div>
 

@@ -61,6 +61,7 @@
     "swr": "2.3.8",
     "tailwind-merge": "3.2.0",
     "tailwindcss-animate": "1.0.7",
+    "three": "^0.185.1",
     "vaul": "1.1.2",
     "zod": "3.24.4"
   },
@@ -69,7 +70,6 @@
     "build": "cd ../packages/motive-icons && yarn install && yarn build && cd ../../frontend && cp -rf ../packages/motive-icons/dist node_modules/rex-motive/ && cp -rf ../packages/motive-icons/src node_modules/rex-motive/ && craco build",
     "test": "craco test"
   },
-
   "browserslist": {
     "production": [
       ">0.2%",

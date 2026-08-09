@@ -20,7 +20,7 @@ npm install rex-motive framer-motion
 ## Universal Props API (`AnimatedIconProps`)
 
 - `size` (number, default: `24`): Icon width & height in pixels.
-- `strokeWidth` (number, default: `2`): Vector path stroke width.
+- `strokeWidth` (number, default: `0.8`): Vector path stroke width.
 - `color` (string, default: `"currentColor"`): Icon stroke color.
 - `trigger` (`"hover" | "click" | "auto" | "focus"`, default: `"hover"`): Animation trigger mode.
 - `loop` (boolean, default: `false`): Loops animation continuously while active.

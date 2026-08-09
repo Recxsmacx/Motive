@@ -27,7 +27,7 @@ function buildCode({ name, trigger, size, stroke, loop, color }) {
 export default function IconDetailModal({ icon, open, onOpenChange }) {
   const [trigger, setTrigger] = useState("Hover");
   const [size, setSize] = useState(64);
-  const [stroke, setStroke] = useState(1.75);
+  const [stroke, setStroke] = useState(0.8);
   const { iconColor, setIconColor } = useIconColor();
   const [speed, setSpeed] = useState(1);
   const [loop, setLoop] = useState(false);
@@ -48,7 +48,7 @@ export default function IconDetailModal({ icon, open, onOpenChange }) {
     if (open) {
       setTrigger("Hover");
       setSize(64);
-      setStroke(1.75);
+      setStroke(0.8);
       setSpeed(1);
       setLoop(false);
       setBg("grid");
@@ -84,11 +84,11 @@ export default function IconDetailModal({ icon, open, onOpenChange }) {
         </DialogDescription>
         <div className="grid grid-cols-1 md:grid-cols-[1.1fr_1fr]">
           {/* Preview */}
-          <div className="relative border-b md:border-b-0 md:border-r border-border">
-            <div className={`relative aspect-square md:aspect-auto md:h-full flex items-center justify-center ${bgClass}`}>
+          <div className="relative border-b md:border-b-0 md:border-r border-border overflow-visible">
+            <div className={`relative aspect-square md:aspect-auto md:h-full flex items-center justify-center overflow-visible ${bgClass}`}>
               <div
                 data-testid={TESTIDS.modalPreview}
-                className={!iconColor ? (bg === "light" ? "text-violet-600" : "text-violet-400") : ""}
+                className={`overflow-visible relative ${!iconColor ? (bg === "light" ? "text-violet-600" : "text-violet-400") : ""}`}
                 style={{ color: iconColor || undefined }}
               >
                 <Comp
