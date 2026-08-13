@@ -7,12 +7,13 @@ export default function AnimatedCheck(props) {
       {() => (
         <motion.path
           d="M20 6L9 17l-5-5"
+          style={{ originX: "12px", originY: "12px" }}
           variants={{
-            inactive: { pathLength: 1, opacity: 1 },
+            inactive: { scale: 1, rotate: 0 },
             active: {
-              pathLength: [0, 1],
-              opacity: [0, 1],
-              transition: { duration: 0.55, ease: [0.65, 0, 0.35, 1] },
+              scale: [1, 1.18, 0.96, 1],
+              rotate: [0, -6, 4, 0],
+              transition: { duration: 0.45, ease: "easeInOut" },
             },
           }}
         />

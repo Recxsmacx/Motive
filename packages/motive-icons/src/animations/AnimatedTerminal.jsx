@@ -24,10 +24,9 @@ export default function AnimatedTerminal(props) {
             x2="20"
             y2="19"
             variants={{
-              inactive: { opacity: 1, pathLength: 1 },
+              inactive: { opacity: 1 },
               active: {
-                opacity: [1, 0, 1, 0, 1],
-                pathLength: [0.3, 1],
+                opacity: [1, 0.2, 1, 0.2, 1],
                 transition: { duration: 0.7, ease: "easeInOut" },
               },
             }}

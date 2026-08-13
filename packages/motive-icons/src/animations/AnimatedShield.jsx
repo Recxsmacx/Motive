@@ -21,12 +21,12 @@ export default function AnimatedShield(props) {
           {/* Inner Security Checkmark */}
           <motion.path
             d="M9 12l2 2 4-4"
+            style={{ originX: "12px", originY: "12px" }}
             variants={{
-              inactive: { pathLength: 1, opacity: 1 },
+              inactive: { scale: 1 },
               active: {
-                pathLength: [0, 1],
-                opacity: [0, 1],
-                transition: { duration: 0.4, delay: 0.1, ease: "easeInOut" },
+                scale: [1, 1.15, 1],
+                transition: { duration: 0.4, ease: "easeInOut" },
               },
             }}
           />

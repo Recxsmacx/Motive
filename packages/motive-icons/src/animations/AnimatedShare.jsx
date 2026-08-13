@@ -13,10 +13,9 @@ export default function AnimatedShare(props) {
             x2="15.42"
             y2="6.51"
             variants={{
-              inactive: { pathLength: 1, opacity: 1 },
+              inactive: { opacity: 1 },
               active: {
-                pathLength: [0.3, 1],
-                opacity: [0.4, 1],
+                opacity: [1, 1],
                 transition: { duration: 0.45, ease: "easeInOut" },
               },
             }}
@@ -27,11 +26,10 @@ export default function AnimatedShare(props) {
             x2="15.42"
             y2="17.49"
             variants={{
-              inactive: { pathLength: 1, opacity: 1 },
+              inactive: { opacity: 1 },
               active: {
-                pathLength: [0.3, 1],
-                opacity: [0.4, 1],
-                transition: { duration: 0.45, delay: 0.05, ease: "easeInOut" },
+                opacity: [1, 1],
+                transition: { duration: 0.45, ease: "easeInOut" },
               },
             }}
           />

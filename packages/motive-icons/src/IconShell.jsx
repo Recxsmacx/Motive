@@ -41,13 +41,14 @@ export default function IconShell({
       {...handlers}
       aria-label={ariaLabel || label}
       role={Wrapper === "button" ? undefined : "img"}
-      className={`inline-flex items-center justify-center outline-none focus-visible:ring-2 focus-visible:ring-violet-500/60 rounded-md ${className}`}
+      className={`inline-flex items-center justify-center outline-none focus-visible:ring-2 focus-visible:ring-violet-500/60 rounded-md overflow-visible ${className}`}
       style={{
         background: "transparent",
         border: "none",
         padding: 0,
         cursor: !isControlled && trigger === "click" ? "pointer" : undefined,
         color,
+        overflow: "visible",
       }}
     >
       <motion.svg
@@ -62,6 +63,8 @@ export default function IconShell({
         initial={false}
         animate={active ? "active" : "inactive"}
         aria-hidden="true"
+        className="overflow-visible"
+        style={{ overflow: "visible" }}
       >
         {render}
       </motion.svg>
