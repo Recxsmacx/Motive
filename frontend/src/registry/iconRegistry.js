@@ -1,11 +1,5 @@
 /**
- * Icon Registry — single source of truth. Powered by the real `rex-motive`
- * npm package built from /app/packages/motive-icons.
- *
- * Adding a new animated icon:
- *   1. Create the component in packages/motive-icons/src/animations/AnimatedXxx.jsx
- *   2. Export it from packages/motive-icons/src/index.js
- *   3. Add one entry below. It automatically appears in gallery, search, filters, playground.
+ * Icon Registry — single source of truth (v1.2.0-hotfix). Powered by `rex-motive`.
  */
 import {
   AnimatedBell,
@@ -63,6 +57,66 @@ import {
   AnimatedMinimize,
   AnimatedSmile,
   AnimatedMessageSquare,
+  // 60-Icon Expansion Suite
+  AnimatedFolder,
+  AnimatedFolderOpen,
+  AnimatedFile,
+  AnimatedFilePlus,
+  AnimatedFileCode,
+  AnimatedFolderGit,
+  AnimatedImage,
+  AnimatedVideo,
+  AnimatedMusic,
+  AnimatedMic,
+  AnimatedMicOff,
+  AnimatedPhone,
+  AnimatedPhoneCall,
+  AnimatedBluetooth,
+  AnimatedBattery,
+  AnimatedCloud,
+  AnimatedCloudUpload,
+  AnimatedCloudDownload,
+  AnimatedRocket,
+  AnimatedRobot,
+  AnimatedBrain,
+  AnimatedMagicWand,
+  AnimatedPencil,
+  AnimatedPenTool,
+  AnimatedPaintBucket,
+  AnimatedCrop,
+  AnimatedScissors,
+  AnimatedGrid,
+  AnimatedLayout,
+  AnimatedSidebar,
+  AnimatedPanelLeft,
+  AnimatedPanelRight,
+  AnimatedKanban,
+  AnimatedChartBar,
+  AnimatedChartLine,
+  AnimatedPieChart,
+  AnimatedTrendingUp,
+  AnimatedWallet,
+  AnimatedCreditCard,
+  AnimatedShoppingBag,
+  AnimatedCart,
+  AnimatedGift,
+  AnimatedTrophy,
+  AnimatedMedal,
+  AnimatedCrown,
+  AnimatedTarget,
+  AnimatedFlag,
+  AnimatedMapPin,
+  AnimatedNavigation,
+  AnimatedKey,
+  AnimatedFingerprint,
+  AnimatedQRCode,
+  AnimatedScan,
+  AnimatedArchive,
+  AnimatedInbox,
+  AnimatedOutbox,
+  AnimatedBellRing,
+  AnimatedBellOff,
+  AnimatedBookmarkCheck,
 } from "rex-motive";
 
 export const CATEGORIES = [
@@ -139,12 +193,82 @@ export const iconRegistry = [
   { name: "Tag", library: "Lucide", category: "Actions", tags: ["price", "label", "category", "badge", "sale"], animation: "Micro-interaction", description: "Hanging tag swings gracefully from its attachment hole.", component: AnimatedTag, addedAt: "2026-08-09T00:00:00Z" },
   { name: "Code", library: "Lucide", category: "Development", tags: ["developer", "brackets", "syntax", "program"], animation: "Directional", description: "Code brackets spread apart dynamically.", component: AnimatedCode, addedAt: "2026-08-09T00:00:00Z" },
   { name: "Terminal", library: "Lucide", category: "Development", tags: ["console", "command", "cli", "shell", "prompt"], animation: "Draw", description: "Command prompt arrow nudges while cursor line blinks.", component: AnimatedTerminal, addedAt: "2026-08-09T00:00:00Z" },
-  { name: "Database", library: "Development", category: "Development", tags: ["storage", "sql", "data", "server", "table"], animation: "Micro-interaction", description: "Storage cylinders expand with pulsing data ring transfer.", component: AnimatedDatabase, addedAt: "2026-08-09T00:00:00Z" },
+  { name: "Database", library: "Lucide", category: "Development", tags: ["storage", "sql", "data", "server", "table"], animation: "Micro-interaction", description: "Storage cylinders expand with pulsing data ring transfer.", component: AnimatedDatabase, addedAt: "2026-08-09T00:00:00Z" },
   { name: "Cpu", library: "Lucide", category: "Development", tags: ["processor", "chip", "hardware", "silicon", "ai"], animation: "Micro-interaction", description: "Silicon core glows while circuit pins pulse signal.", component: AnimatedCpu, addedAt: "2026-08-09T00:00:00Z" },
   { name: "Maximize", library: "Lucide", category: "Interface", tags: ["expand", "fullscreen", "grow", "zoom"], animation: "Directional", description: "Corner arrows spring outward into full frame.", component: AnimatedMaximize, addedAt: "2026-08-09T00:00:00Z" },
   { name: "Minimize", library: "Lucide", category: "Interface", tags: ["shrink", "compress", "small", "close"], animation: "Directional", description: "Corner arrows spring inward toward center.", component: AnimatedMinimize, addedAt: "2026-08-09T00:00:00Z" },
   { name: "Smile", library: "Lucide", category: "Social", tags: ["happy", "emoji", "face", "like", "joy"], animation: "Micro-interaction", description: "Eyes blink in unison as smile curve bounces.", component: AnimatedSmile, addedAt: "2026-08-09T00:00:00Z" },
   { name: "MessageSquare", library: "Lucide", category: "Communication", tags: ["chat", "comment", "bubble", "talk", "feedback"], animation: "Micro-interaction", description: "Speech bubble pops with 3 typing indicator dots.", component: AnimatedMessageSquare, addedAt: "2026-08-09T00:00:00Z" },
+
+  // --- 60-Icon Expansion Suite ---
+  // Batch 1: Productivity & Files
+  { name: "Folder", library: "Lucide", category: "Files", tags: ["directory", "folder", "storage", "archive"], animation: "Morph", description: "Front flap opens with hinged perspective tilt.", component: AnimatedFolder, addedAt: "2026-09-01T00:00:00Z" },
+  { name: "FolderOpen", library: "Lucide", category: "Files", tags: ["open", "directory", "browse", "files"], animation: "Directional", description: "Flap spreads wide as internal documents slide upward.", component: AnimatedFolderOpen, addedAt: "2026-09-01T00:00:00Z" },
+  { name: "File", library: "Lucide", category: "Files", tags: ["document", "page", "sheet", "text"], animation: "Morph", description: "Top-right corner fold peels down with elastic damping.", component: AnimatedFile, addedAt: "2026-09-01T00:00:00Z" },
+  { name: "FilePlus", library: "Lucide", category: "Files", tags: ["new file", "create", "document", "add"], animation: "Micro-interaction", description: "Plus badge springs with a 90° clockwise snap twist.", component: AnimatedFilePlus, addedAt: "2026-09-01T00:00:00Z" },
+  { name: "FileCode", library: "Lucide", category: "Development", tags: ["code", "source", "script", "markup"], animation: "Directional", description: "Code brackets spread apart symmetrically on X-axis.", component: AnimatedFileCode, addedAt: "2026-09-01T00:00:00Z" },
+  { name: "Archive", library: "Lucide", category: "Files", tags: ["box", "store", "backup", "vault"], animation: "Micro-interaction", description: "Heavy box lid hinges open then snaps shut.", component: AnimatedArchive, addedAt: "2026-09-01T00:00:00Z" },
+  { name: "Inbox", library: "Lucide", category: "Communication", tags: ["receive", "messages", "incoming", "mail"], animation: "Directional", description: "Incoming mail slip glides down into receiving tray.", component: AnimatedInbox, addedAt: "2026-09-01T00:00:00Z" },
+  { name: "Outbox", library: "Lucide", category: "Communication", tags: ["send", "outgoing", "dispatch", "mail"], animation: "Directional", description: "Envelope crouches then launches upward out of tray.", component: AnimatedOutbox, addedAt: "2026-09-01T00:00:00Z" },
+  { name: "BookmarkCheck", library: "Lucide", category: "Actions", tags: ["saved", "bookmark", "favorite", "verified"], animation: "Draw", description: "Ribbon glides down as checkmark traces dynamically.", component: AnimatedBookmarkCheck, addedAt: "2026-09-01T00:00:00Z" },
+  { name: "Sidebar", library: "Lucide", category: "Interface", tags: ["navigation", "layout", "menu", "panel"], animation: "Directional", description: "Sidebar column expands width with subtle content shift.", component: AnimatedSidebar, addedAt: "2026-09-01T00:00:00Z" },
+  { name: "Kanban", library: "Lucide", category: "Interface", tags: ["board", "tasks", "agile", "workflow"], animation: "Directional", description: "Task card lifts from column and glides to neighbor.", component: AnimatedKanban, addedAt: "2026-09-01T00:00:00Z" },
+
+  // Batch 2: AI, Cloud & Autonomous Agents
+  { name: "Brain", library: "Phosphor", category: "Development", tags: ["ai", "neural", "intelligence", "synapse", "mind"], animation: "Micro-interaction", description: "Staggered neural synaptic pulse between hemispheres.", component: AnimatedBrain, addedAt: "2026-09-01T00:00:00Z" },
+  { name: "Robot", library: "Phosphor", category: "Development", tags: ["bot", "ai", "automaton", "agent", "assistant"], animation: "Micro-interaction", description: "Antenna wobbles with pendulum spring as eyes blink.", component: AnimatedRobot, addedAt: "2026-09-01T00:00:00Z" },
+  { name: "Rocket", library: "Phosphor", category: "Actions", tags: ["launch", "speed", "startup", "deploy", "thrust"], animation: "Directional", description: "Pre-launch nozzle squish with dynamic 45° launch thrust.", component: AnimatedRocket, addedAt: "2026-09-01T00:00:00Z" },
+  { name: "MagicWand", library: "Phosphor", category: "Actions", tags: ["magic", "wizard", "effects", "enhance", "ai"], animation: "Draw", description: "Wand tilts down drawing an arc of sparkling starlight.", component: AnimatedMagicWand, addedAt: "2026-09-01T00:00:00Z" },
+  { name: "Cloud", library: "Lucide", category: "Interface", tags: ["server", "storage", "weather", "cloud"], animation: "Micro-interaction", description: "Cloud floats with gentle vertical buoyancy and drift.", component: AnimatedCloud, addedAt: "2026-09-01T00:00:00Z" },
+  { name: "CloudUpload", library: "Lucide", category: "Files", tags: ["cloud", "upload", "sync", "backup"], animation: "Directional", description: "Cloud base compresses, catapulting upload arrow upward.", component: AnimatedCloudUpload, addedAt: "2026-09-01T00:00:00Z" },
+  { name: "CloudDownload", library: "Lucide", category: "Files", tags: ["cloud", "download", "get", "sync"], animation: "Directional", description: "Arrow drops through cloud vapor into landing bar.", component: AnimatedCloudDownload, addedAt: "2026-09-01T00:00:00Z" },
+  { name: "FolderGit", library: "Phosphor", category: "Development", tags: ["git", "repository", "branch", "vcs"], animation: "Draw", description: "Git commit branch draws and snaps into target node.", component: AnimatedFolderGit, addedAt: "2026-09-01T00:00:00Z" },
+  { name: "Bluetooth", library: "Lucide", category: "Interface", tags: ["wireless", "connectivity", "device", "bt"], animation: "Micro-interaction", description: "Rune vertical spine pulses as signal chevrons snap.", component: AnimatedBluetooth, addedAt: "2026-09-01T00:00:00Z" },
+  { name: "Battery", library: "Lucide", category: "Interface", tags: ["power", "charge", "energy", "status"], animation: "Draw", description: "Charge bar level fills sequentially in thirds.", component: AnimatedBattery, addedAt: "2026-09-01T00:00:00Z" },
+  { name: "Scan", library: "Lucide", category: "Interface", tags: ["laser", "reader", "barcode", "detect"], animation: "Directional", description: "Laser sweep line tracks vertically between corner brackets.", component: AnimatedScan, addedAt: "2026-09-01T00:00:00Z" },
+  { name: "QRCode", library: "Phosphor", category: "Interface", tags: ["qr", "barcode", "scan", "code"], animation: "Micro-interaction", description: "Corner positioning squares lock in with magnetic snap.", component: AnimatedQRCode, addedAt: "2026-09-01T00:00:00Z" },
+
+  // Batch 3: Creation, Design & Vectors
+  { name: "Pencil", library: "Lucide", category: "Actions", tags: ["write", "edit", "draw", "compose"], animation: "Draw", description: "Pencil tilts and writes as an underline scribble draws.", component: AnimatedPencil, addedAt: "2026-09-01T00:00:00Z" },
+  { name: "PenTool", library: "Lucide", category: "Actions", tags: ["vector", "bezier", "path", "design"], animation: "Morph", description: "Bezier control handles stretch symmetrically outward.", component: AnimatedPenTool, addedAt: "2026-09-01T00:00:00Z" },
+  { name: "PaintBucket", library: "Phosphor", category: "Actions", tags: ["fill", "color", "paint", "canvas"], animation: "Directional", description: "Bucket tips as a paint droplet detaches and drops.", component: AnimatedPaintBucket, addedAt: "2026-09-01T00:00:00Z" },
+  { name: "Crop", library: "Lucide", category: "Actions", tags: ["trim", "frame", "resize", "photo"], animation: "Micro-interaction", description: "Four corner framing handles slide symmetrically inward.", component: AnimatedCrop, addedAt: "2026-09-01T00:00:00Z" },
+  { name: "Scissors", library: "Lucide", category: "Actions", tags: ["cut", "trim", "snip", "split"], animation: "Micro-interaction", description: "Opposing scissor blades pivot inward in a crisp cross-cut.", component: AnimatedScissors, addedAt: "2026-09-01T00:00:00Z" },
+  { name: "Grid", library: "Lucide", category: "Interface", tags: ["matrix", "layout", "table", "cells"], animation: "Draw", description: "Grid quadrants assemble in a diagonal cascade.", component: AnimatedGrid, addedAt: "2026-09-01T00:00:00Z" },
+  { name: "Layout", library: "Lucide", category: "Interface", tags: ["dashboard", "structure", "template", "ui"], animation: "Morph", description: "Header and panel tiles flex into a fresh layout.", component: AnimatedLayout, addedAt: "2026-09-01T00:00:00Z" },
+  { name: "PanelLeft", library: "Lucide", category: "Interface", tags: ["drawer", "sidebar", "panel", "slide"], animation: "Directional", description: "Left panel divider slides smoothly outward.", component: AnimatedPanelLeft, addedAt: "2026-09-01T00:00:00Z" },
+  { name: "PanelRight", library: "Lucide", category: "Interface", tags: ["drawer", "sidebar", "panel", "slide"], animation: "Directional", description: "Right panel divider slides smoothly inward.", component: AnimatedPanelRight, addedAt: "2026-09-01T00:00:00Z" },
+  { name: "Fingerprint", library: "Lucide", category: "Interface", tags: ["biometric", "auth", "security", "touch"], animation: "Draw", description: "Concentric whorl ridges trace sequentially outward.", component: AnimatedFingerprint, addedAt: "2026-09-01T00:00:00Z" },
+  { name: "Image", library: "Lucide", category: "Media", tags: ["picture", "photo", "gallery", "graphic"], animation: "Micro-interaction", description: "Mountain landscape shifts parallax as sun orb rises.", component: AnimatedImage, addedAt: "2026-09-01T00:00:00Z" },
+  { name: "Video", library: "Lucide", category: "Media", tags: ["movie", "record", "clip", "stream"], animation: "Micro-interaction", description: "Camera chassis tilts as lens cone extends slightly.", component: AnimatedVideo, addedAt: "2026-09-01T00:00:00Z" },
+
+  // Batch 4: Media, Audio & Communications
+  { name: "Music", library: "Lucide", category: "Media", tags: ["audio", "song", "tune", "sound"], animation: "Micro-interaction", description: "Dual note heads bounce with a syncopated groove sway.", component: AnimatedMusic, addedAt: "2026-09-01T00:00:00Z" },
+  { name: "Mic", library: "Lucide", category: "Media", tags: ["microphone", "audio", "record", "voice"], animation: "Micro-interaction", description: "Microphone capsule squashes softly as cradle pulses.", component: AnimatedMic, addedAt: "2026-09-01T00:00:00Z" },
+  { name: "MicOff", library: "Lucide", category: "Media", tags: ["mute", "silence", "quiet", "audio"], animation: "Draw", description: "Crisp diagonal slash draws across the muted capsule.", component: AnimatedMicOff, addedAt: "2026-09-01T00:00:00Z" },
+  { name: "Phone", library: "Lucide", category: "Communication", tags: ["call", "telephone", "contact", "dial"], animation: "Directional", description: "Receiver lifts and rocks softly on its cradle.", component: AnimatedPhone, addedAt: "2026-09-01T00:00:00Z" },
+  { name: "PhoneCall", library: "Lucide", category: "Communication", tags: ["calling", "ringing", "incoming", "signal"], animation: "Micro-interaction", description: "Handset vibrates as concentric acoustic waves radiate.", component: AnimatedPhoneCall, addedAt: "2026-09-01T00:00:00Z" },
+  { name: "BellRing", library: "Lucide", category: "Interface", tags: ["alarm", "notification", "ring", "alert"], animation: "Micro-interaction", description: "Bell swings with harmonic oscillation as soundwaves pop.", component: AnimatedBellRing, addedAt: "2026-09-01T00:00:00Z" },
+  { name: "BellOff", library: "Lucide", category: "Interface", tags: ["mute", "silent", "quiet", "dnd"], animation: "Draw", description: "Mute strike-through line draws across bell dome.", component: AnimatedBellOff, addedAt: "2026-09-01T00:00:00Z" },
+  { name: "Navigation", library: "Lucide", category: "Navigation", tags: ["gps", "arrow", "heading", "compass"], animation: "Directional", description: "Compass arrow pivots towards north and surges forward.", component: AnimatedNavigation, addedAt: "2026-09-01T00:00:00Z" },
+  { name: "MapPin", library: "Lucide", category: "Navigation", tags: ["location", "place", "point", "marker"], animation: "Directional", description: "Pin drops from above, bouncing onto radar ground ripple.", component: AnimatedMapPin, addedAt: "2026-09-01T00:00:00Z" },
+  { name: "Key", library: "Lucide", category: "Interface", tags: ["lock", "unlock", "access", "auth", "secret"], animation: "Micro-interaction", description: "Key turns in virtual lock barrel and snaps back.", component: AnimatedKey, addedAt: "2026-09-01T00:00:00Z" },
+  { name: "Target", library: "Lucide", category: "Actions", tags: ["goal", "aim", "bullseye", "focus"], animation: "Micro-interaction", description: "Bullseye center pops as concentric ring ripples expand.", component: AnimatedTarget, addedAt: "2026-09-01T00:00:00Z" },
+  { name: "Flag", library: "Lucide", category: "Interface", tags: ["mark", "country", "banner", "pennant"], animation: "Morph", description: "Flag cloth fabric ripples horizontally in wind wave.", component: AnimatedFlag, addedAt: "2026-09-01T00:00:00Z" },
+
+  // Batch 5: Commerce, Growth & Metrics
+  { name: "Wallet", library: "Phosphor", category: "Commerce", tags: ["money", "crypto", "pay", "finance"], animation: "Micro-interaction", description: "Wallet body eases as top credit card peeks out.", component: AnimatedWallet, addedAt: "2026-09-01T00:00:00Z" },
+  { name: "CreditCard", library: "Lucide", category: "Commerce", tags: ["payment", "bank", "purchase", "card"], animation: "Directional", description: "Card tilts in 3D perspective as EMV chip flashes.", component: AnimatedCreditCard, addedAt: "2026-09-01T00:00:00Z" },
+  { name: "ShoppingBag", library: "Phosphor", category: "Commerce", tags: ["store", "shop", "buy", "retail"], animation: "Micro-interaction", description: "Bag handles drop as bag body expands with retail bounce.", component: AnimatedShoppingBag, addedAt: "2026-09-01T00:00:00Z" },
+  { name: "Cart", library: "Phosphor", category: "Commerce", tags: ["shopping", "ecommerce", "basket", "buy"], animation: "Directional", description: "Cart rolls forward on spinning wheels and halts.", component: AnimatedCart, addedAt: "2026-09-01T00:00:00Z" },
+  { name: "Gift", library: "Lucide", category: "Social", tags: ["present", "reward", "surprise", "box"], animation: "Micro-interaction", description: "Ribbon bow expands as gift lid lifts with interior gleam.", component: AnimatedGift, addedAt: "2026-09-01T00:00:00Z" },
+  { name: "Trophy", library: "Lucide", category: "Social", tags: ["award", "winner", "achievement", "first"], animation: "Micro-interaction", description: "Trophy elevates with scale overshoot and rim gleam.", component: AnimatedTrophy, addedAt: "2026-09-01T00:00:00Z" },
+  { name: "Medal", library: "Phosphor", category: "Social", tags: ["badge", "honor", "ribbon", "prize"], animation: "Micro-interaction", description: "V-neck ribbon sways as coin medallion pendant swings.", component: AnimatedMedal, addedAt: "2026-09-01T00:00:00Z" },
+  { name: "Crown", library: "Phosphor", category: "Social", tags: ["king", "queen", "vip", "premium", "royal"], animation: "Micro-interaction", description: "Crown drops onto virtual head with royal spring rebound.", component: AnimatedCrown, addedAt: "2026-09-01T00:00:00Z" },
+  { name: "ChartBar", library: "Phosphor", category: "Commerce", tags: ["analytics", "metrics", "stats", "graph"], animation: "Directional", description: "Vertical metric bars rise sequentially with spring heights.", component: AnimatedChartBar, addedAt: "2026-09-01T00:00:00Z" },
+  { name: "ChartLine", library: "Phosphor", category: "Commerce", tags: ["trend", "stocks", "growth", "performance"], animation: "Draw", description: "Line graph traces dynamically to peak milestone node.", component: AnimatedChartLine, addedAt: "2026-09-01T00:00:00Z" },
+  { name: "PieChart", library: "Lucide", category: "Commerce", tags: ["distribution", "analytics", "breakdown", "data"], animation: "Morph", description: "90° pie quadrant separates outward from circular base.", component: AnimatedPieChart, addedAt: "2026-09-01T00:00:00Z" },
+  { name: "TrendingUp", library: "Lucide", category: "Commerce", tags: ["growth", "increase", "bullish", "profit"], animation: "Directional", description: "Zigzag pathway draws upward, launching terminal arrow.", component: AnimatedTrendingUp, addedAt: "2026-09-01T00:00:00Z" },
 ];
 
 /**
@@ -163,4 +287,3 @@ export function isIconNew(icon) {
 export const iconBySlug = Object.fromEntries(
   iconRegistry.map((i) => [i.name.toLowerCase(), i]),
 );
-

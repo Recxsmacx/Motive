@@ -1,73 +1,92 @@
-// craco.config.js
 const path = require("path");
-require("dotenv").config();
+const fs = require("fs");
 
-// Check if we're in development/preview mode (not production build)
-// Craco sets NODE_ENV=development for start, NODE_ENV=production for build
-const isDevServer = process.env.NODE_ENV !== "production";
+// Check if health check should be enabled
+const enableHealthCheck = process.env.ENABLE_HEALTH_CHECK === "true";
 
-// Environment variable overrides
-const config = {
-  enableHealthCheck: process.env.ENABLE_HEALTH_CHECK === "true",
+let config = {
+  enableHealthCheck: false,
 };
 
-function makeDevServerV5Compatible(devServerConfig) {
-  const {
-    https,
-    onAfterSetupMiddleware,
-    onBeforeSetupMiddleware,
-    onListening,
-    setupMiddlewares,
-    ...compatibleConfig
-  } = devServerConfig;
+let healthPluginInstance = null;
+let setupHealthEndpoints = null;
 
-  compatibleConfig.server =
-    typeof https === "object"
-      ? { type: "https", options: https }
-      : https
-        ? "https"
-        : "http";
-  compatibleConfig.headers = {
-    ...compatibleConfig.headers,
-    "Cross-Origin-Resource-Policy": "same-origin",
-  };
+if (enableHealthCheck) {
+  // Try to load health plugin from .agents/health-plugin
+  const healthPluginPath = path.resolve(
+    __dirname,
+    ".agents/health-plugin/webpack-health-plugin.js"
+  );
+  if (fs.existsSync(healthPluginPath)) {
+    const HealthPlugin = require(healthPluginPath);
+    healthPluginInstance = new HealthPlugin();
+    setupHealthEndpoints = HealthPlugin.setupHealthEndpoints;
+    config.enableHealthCheck = true;
+  }
+}
 
-  if (onBeforeSetupMiddleware || setupMiddlewares) {
-    compatibleConfig.setupMiddlewares = (middlewares, devServer) => {
-      if (onBeforeSetupMiddleware) {
-        onBeforeSetupMiddleware(devServer);
-      }
+// Function to make dev server config compatible with webpack-dev-server v5
+const makeDevServerV5Compatible = (devServerConfig) => {
+  if (!devServerConfig) return devServerConfig;
 
-      return setupMiddlewares
-        ? setupMiddlewares(middlewares, devServer)
-        : middlewares;
-    };
+  // Handle https property for Webpack Dev Server v5
+  if ("https" in devServerConfig) {
+    if (devServerConfig.https) {
+      devServerConfig.server =
+        typeof devServerConfig.https === "object"
+          ? { type: "https", options: devServerConfig.https }
+          : "https";
+    }
+    delete devServerConfig.https;
   }
 
-  compatibleConfig.onListening = (devServer) => {
-    devServer.close ??= (callback) => devServer.stopCallback(callback);
-
-    if (onListening) {
-      onListening(devServer);
+  // Handle disableHostCheck for Webpack Dev Server v5
+  if ("disableHostCheck" in devServerConfig) {
+    if (devServerConfig.disableHostCheck) {
+      devServerConfig.allowedHosts = "all";
     }
-    if (onAfterSetupMiddleware) {
-      onAfterSetupMiddleware(devServer);
-    }
-  };
+    delete devServerConfig.disableHostCheck;
+  }
 
-  return compatibleConfig;
-}
+  // Handle clientLogLevel for Webpack Dev Server v5
+  if ("clientLogLevel" in devServerConfig) {
+    delete devServerConfig.clientLogLevel;
+  }
 
-// Conditionally load health check modules only if enabled
-let WebpackHealthPlugin;
-let setupHealthEndpoints;
-let healthPluginInstance;
+  if (devServerConfig.onBeforeSetupMiddleware) {
+    const originalOnBeforeSetup = devServerConfig.onBeforeSetupMiddleware;
+    const originalSetupMiddlewares = devServerConfig.setupMiddlewares;
 
-if (config.enableHealthCheck) {
-  WebpackHealthPlugin = require("./plugins/health-check/webpack-health-plugin");
-  setupHealthEndpoints = require("./plugins/health-check/health-endpoints");
-  healthPluginInstance = new WebpackHealthPlugin();
-}
+    devServerConfig.setupMiddlewares = (middlewares, devServer) => {
+      originalOnBeforeSetup(devServer);
+      if (originalSetupMiddlewares) {
+        return originalSetupMiddlewares(middlewares, devServer);
+      }
+      return middlewares;
+    };
+
+    delete devServerConfig.onBeforeSetupMiddleware;
+  }
+
+  if (devServerConfig.onAfterSetupMiddleware) {
+    const originalOnAfterSetup = devServerConfig.onAfterSetupMiddleware;
+    const existingSetupMiddlewares = devServerConfig.setupMiddlewares;
+
+    devServerConfig.setupMiddlewares = (middlewares, devServer) => {
+      const updatedMiddlewares = existingSetupMiddlewares
+        ? existingSetupMiddlewares(middlewares, devServer)
+        : middlewares;
+      originalOnAfterSetup(devServer);
+      return updatedMiddlewares;
+    };
+
+    delete devServerConfig.onAfterSetupMiddleware;
+  }
+
+  return devServerConfig;
+};
+
+const motiveIconsSrc = path.resolve(__dirname, "../packages/motive-icons/src");
 
 let webpackConfig = {
   eslint: {
@@ -81,22 +100,44 @@ let webpackConfig = {
   },
   webpack: {
     alias: {
-      '@': path.resolve(__dirname, 'src'),
+      "@": path.resolve(__dirname, "src"),
+      "rex-motive": motiveIconsSrc,
     },
     configure: (webpackConfig) => {
+      // Allow monorepo package imports outside frontend/src
+      if (webpackConfig.resolve && webpackConfig.resolve.plugins) {
+        webpackConfig.resolve.plugins = webpackConfig.resolve.plugins.filter(
+          (plugin) => plugin.constructor.name !== "ModuleScopePlugin"
+        );
+      }
 
-      // Add ignored patterns to reduce watched directories
-        webpackConfig.watchOptions = {
-          ...webpackConfig.watchOptions,
-          ignored: [
-            '**/node_modules/**',
-            '**/.git/**',
-            '**/build/**',
-            '**/dist/**',
-            '**/coverage/**',
-            '**/public/**',
-        ],
-      };
+      // Allow extensionless imports from ESM packages
+      webpackConfig.module.rules.push({
+        test: /\.m?js$/,
+        resolve: {
+          fullySpecified: false,
+        },
+      });
+
+      // Transpile packages/motive-icons/src using babel-loader
+      const oneOfRule = webpackConfig.module && webpackConfig.module.rules
+        ? webpackConfig.module.rules.find((r) => r.oneOf)
+        : null;
+
+      if (oneOfRule) {
+        const babelLoader = oneOfRule.oneOf.find(
+          (r) => r.loader && r.loader.includes("babel-loader")
+        );
+        if (babelLoader) {
+          if (Array.isArray(babelLoader.include)) {
+            if (!babelLoader.include.includes(motiveIconsSrc)) {
+              babelLoader.include.push(motiveIconsSrc);
+            }
+          } else {
+            babelLoader.include = [babelLoader.include, motiveIconsSrc];
+          }
+        }
+      }
 
       // Add health check plugin to webpack if enabled
       if (config.enableHealthCheck && healthPluginInstance) {
@@ -108,26 +149,20 @@ let webpackConfig = {
 };
 
 webpackConfig.devServer = (devServerConfig) => {
-  // Add health check endpoints if enabled
   if (config.enableHealthCheck && setupHealthEndpoints && healthPluginInstance) {
     const originalSetupMiddlewares = devServerConfig.setupMiddlewares;
 
     devServerConfig.setupMiddlewares = (middlewares, devServer) => {
-      // Call original setup if exists
       if (originalSetupMiddlewares) {
         middlewares = originalSetupMiddlewares(middlewares, devServer);
       }
-
-      // Setup health endpoints
       setupHealthEndpoints(devServer, healthPluginInstance);
-
       return middlewares;
     };
   }
 
   return devServerConfig;
 };
-
 
 const configureDevServer = webpackConfig.devServer;
 webpackConfig.devServer = (devServerConfig) =>

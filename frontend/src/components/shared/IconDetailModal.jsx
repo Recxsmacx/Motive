@@ -62,7 +62,7 @@ export default function IconDetailModal({ icon, open, onOpenChange }) {
   );
 
 
-  if (!icon) return null;
+  if (!icon || !icon.component) return null;
   const Comp = icon.component;
 
   const bgClass =

@@ -5,7 +5,7 @@ export type IconTrigger = "hover" | "click" | "auto" | "focus";
 export interface AnimatedIconProps {
   /** Rendered size in pixels. Default: 24. */
   size?: number;
-  /** SVG stroke width. Default: 2. */
+  /** SVG stroke width. Default: 0.8. */
   strokeWidth?: number;
   /** Icon color (any CSS color). Default: "currentColor". */
   color?: string;
@@ -39,6 +39,7 @@ export declare function useIconTrigger(opts?: {
   pulse: (durationMs?: number) => void;
 };
 
+// Core suite declarations
 export declare function AnimatedBell(props: AnimatedIconProps): JSX.Element;
 export declare function AnimatedHeart(props: AnimatedIconProps): JSX.Element;
 export declare function AnimatedSearch(props: AnimatedIconProps): JSX.Element;
@@ -95,5 +96,63 @@ export declare function AnimatedMinimize(props: AnimatedIconProps): JSX.Element;
 export declare function AnimatedSmile(props: AnimatedIconProps): JSX.Element;
 export declare function AnimatedMessageSquare(props: AnimatedIconProps): JSX.Element;
 
-
-
+// 60-Icon Expansion Suite Declarations
+export declare function AnimatedFolder(props: AnimatedIconProps): JSX.Element;
+export declare function AnimatedFolderOpen(props: AnimatedIconProps): JSX.Element;
+export declare function AnimatedFile(props: AnimatedIconProps): JSX.Element;
+export declare function AnimatedFilePlus(props: AnimatedIconProps): JSX.Element;
+export declare function AnimatedFileCode(props: AnimatedIconProps): JSX.Element;
+export declare function AnimatedFolderGit(props: AnimatedIconProps): JSX.Element;
+export declare function AnimatedImage(props: AnimatedIconProps): JSX.Element;
+export declare function AnimatedVideo(props: AnimatedIconProps): JSX.Element;
+export declare function AnimatedMusic(props: AnimatedIconProps): JSX.Element;
+export declare function AnimatedMic(props: AnimatedIconProps): JSX.Element;
+export declare function AnimatedMicOff(props: AnimatedIconProps): JSX.Element;
+export declare function AnimatedPhone(props: AnimatedIconProps): JSX.Element;
+export declare function AnimatedPhoneCall(props: AnimatedIconProps): JSX.Element;
+export declare function AnimatedBluetooth(props: AnimatedIconProps): JSX.Element;
+export declare function AnimatedBattery(props: AnimatedIconProps): JSX.Element;
+export declare function AnimatedCloud(props: AnimatedIconProps): JSX.Element;
+export declare function AnimatedCloudUpload(props: AnimatedIconProps): JSX.Element;
+export declare function AnimatedCloudDownload(props: AnimatedIconProps): JSX.Element;
+export declare function AnimatedRocket(props: AnimatedIconProps): JSX.Element;
+export declare function AnimatedRobot(props: AnimatedIconProps): JSX.Element;
+export declare function AnimatedBrain(props: AnimatedIconProps): JSX.Element;
+export declare function AnimatedMagicWand(props: AnimatedIconProps): JSX.Element;
+export declare function AnimatedPencil(props: AnimatedIconProps): JSX.Element;
+export declare function AnimatedPenTool(props: AnimatedIconProps): JSX.Element;
+export declare function AnimatedPaintBucket(props: AnimatedIconProps): JSX.Element;
+export declare function AnimatedCrop(props: AnimatedIconProps): JSX.Element;
+export declare function AnimatedScissors(props: AnimatedIconProps): JSX.Element;
+export declare function AnimatedGrid(props: AnimatedIconProps): JSX.Element;
+export declare function AnimatedLayout(props: AnimatedIconProps): JSX.Element;
+export declare function AnimatedSidebar(props: AnimatedIconProps): JSX.Element;
+export declare function AnimatedPanelLeft(props: AnimatedIconProps): JSX.Element;
+export declare function AnimatedPanelRight(props: AnimatedIconProps): JSX.Element;
+export declare function AnimatedKanban(props: AnimatedIconProps): JSX.Element;
+export declare function AnimatedChartBar(props: AnimatedIconProps): JSX.Element;
+export declare function AnimatedChartLine(props: AnimatedIconProps): JSX.Element;
+export declare function AnimatedPieChart(props: AnimatedIconProps): JSX.Element;
+export declare function AnimatedTrendingUp(props: AnimatedIconProps): JSX.Element;
+export declare function AnimatedWallet(props: AnimatedIconProps): JSX.Element;
+export declare function AnimatedCreditCard(props: AnimatedIconProps): JSX.Element;
+export declare function AnimatedShoppingBag(props: AnimatedIconProps): JSX.Element;
+export declare function AnimatedCart(props: AnimatedIconProps): JSX.Element;
+export declare function AnimatedGift(props: AnimatedIconProps): JSX.Element;
+export declare function AnimatedTrophy(props: AnimatedIconProps): JSX.Element;
+export declare function AnimatedMedal(props: AnimatedIconProps): JSX.Element;
+export declare function AnimatedCrown(props: AnimatedIconProps): JSX.Element;
+export declare function AnimatedTarget(props: AnimatedIconProps): JSX.Element;
+export declare function AnimatedFlag(props: AnimatedIconProps): JSX.Element;
+export declare function AnimatedMapPin(props: AnimatedIconProps): JSX.Element;
+export declare function AnimatedNavigation(props: AnimatedIconProps): JSX.Element;
+export declare function AnimatedKey(props: AnimatedIconProps): JSX.Element;
+export declare function AnimatedFingerprint(props: AnimatedIconProps): JSX.Element;
+export declare function AnimatedQRCode(props: AnimatedIconProps): JSX.Element;
+export declare function AnimatedScan(props: AnimatedIconProps): JSX.Element;
+export declare function AnimatedArchive(props: AnimatedIconProps): JSX.Element;
+export declare function AnimatedInbox(props: AnimatedIconProps): JSX.Element;
+export declare function AnimatedOutbox(props: AnimatedIconProps): JSX.Element;
+export declare function AnimatedBellRing(props: AnimatedIconProps): JSX.Element;
+export declare function AnimatedBellOff(props: AnimatedIconProps): JSX.Element;
+export declare function AnimatedBookmarkCheck(props: AnimatedIconProps): JSX.Element;

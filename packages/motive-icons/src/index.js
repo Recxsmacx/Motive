@@ -2,6 +2,7 @@
 export { default as IconShell } from "./IconShell";
 export { useIconTrigger } from "./hooks/useIconTrigger";
 
+// Core suite
 export { default as AnimatedBell } from "./animations/AnimatedBell";
 export { default as AnimatedHeart } from "./animations/AnimatedHeart";
 export { default as AnimatedSearch } from "./animations/AnimatedSearch";
@@ -58,5 +59,63 @@ export { default as AnimatedMinimize } from "./animations/AnimatedMinimize";
 export { default as AnimatedSmile } from "./animations/AnimatedSmile";
 export { default as AnimatedMessageSquare } from "./animations/AnimatedMessageSquare";
 
-
-
+// 60-Icon Expansion Suite
+export { default as AnimatedFolder } from "./animations/AnimatedFolder";
+export { default as AnimatedFolderOpen } from "./animations/AnimatedFolderOpen";
+export { default as AnimatedFile } from "./animations/AnimatedFile";
+export { default as AnimatedFilePlus } from "./animations/AnimatedFilePlus";
+export { default as AnimatedFileCode } from "./animations/AnimatedFileCode";
+export { default as AnimatedFolderGit } from "./animations/AnimatedFolderGit";
+export { default as AnimatedImage } from "./animations/AnimatedImage";
+export { default as AnimatedVideo } from "./animations/AnimatedVideo";
+export { default as AnimatedMusic } from "./animations/AnimatedMusic";
+export { default as AnimatedMic } from "./animations/AnimatedMic";
+export { default as AnimatedMicOff } from "./animations/AnimatedMicOff";
+export { default as AnimatedPhone } from "./animations/AnimatedPhone";
+export { default as AnimatedPhoneCall } from "./animations/AnimatedPhoneCall";
+export { default as AnimatedBluetooth } from "./animations/AnimatedBluetooth";
+export { default as AnimatedBattery } from "./animations/AnimatedBattery";
+export { default as AnimatedCloud } from "./animations/AnimatedCloud";
+export { default as AnimatedCloudUpload } from "./animations/AnimatedCloudUpload";
+export { default as AnimatedCloudDownload } from "./animations/AnimatedCloudDownload";
+export { default as AnimatedRocket } from "./animations/AnimatedRocket";
+export { default as AnimatedRobot } from "./animations/AnimatedRobot";
+export { default as AnimatedBrain } from "./animations/AnimatedBrain";
+export { default as AnimatedMagicWand } from "./animations/AnimatedMagicWand";
+export { default as AnimatedPencil } from "./animations/AnimatedPencil";
+export { default as AnimatedPenTool } from "./animations/AnimatedPenTool";
+export { default as AnimatedPaintBucket } from "./animations/AnimatedPaintBucket";
+export { default as AnimatedCrop } from "./animations/AnimatedCrop";
+export { default as AnimatedScissors } from "./animations/AnimatedScissors";
+export { default as AnimatedGrid } from "./animations/AnimatedGrid";
+export { default as AnimatedLayout } from "./animations/AnimatedLayout";
+export { default as AnimatedSidebar } from "./animations/AnimatedSidebar";
+export { default as AnimatedPanelLeft } from "./animations/AnimatedPanelLeft";
+export { default as AnimatedPanelRight } from "./animations/AnimatedPanelRight";
+export { default as AnimatedKanban } from "./animations/AnimatedKanban";
+export { default as AnimatedChartBar } from "./animations/AnimatedChartBar";
+export { default as AnimatedChartLine } from "./animations/AnimatedChartLine";
+export { default as AnimatedPieChart } from "./animations/AnimatedPieChart";
+export { default as AnimatedTrendingUp } from "./animations/AnimatedTrendingUp";
+export { default as AnimatedWallet } from "./animations/AnimatedWallet";
+export { default as AnimatedCreditCard } from "./animations/AnimatedCreditCard";
+export { default as AnimatedShoppingBag } from "./animations/AnimatedShoppingBag";
+export { default as AnimatedCart } from "./animations/AnimatedCart";
+export { default as AnimatedGift } from "./animations/AnimatedGift";
+export { default as AnimatedTrophy } from "./animations/AnimatedTrophy";
+export { default as AnimatedMedal } from "./animations/AnimatedMedal";
+export { default as AnimatedCrown } from "./animations/AnimatedCrown";
+export { default as AnimatedTarget } from "./animations/AnimatedTarget";
+export { default as AnimatedFlag } from "./animations/AnimatedFlag";
+export { default as AnimatedMapPin } from "./animations/AnimatedMapPin";
+export { default as AnimatedNavigation } from "./animations/AnimatedNavigation";
+export { default as AnimatedKey } from "./animations/AnimatedKey";
+export { default as AnimatedFingerprint } from "./animations/AnimatedFingerprint";
+export { default as AnimatedQRCode } from "./animations/AnimatedQRCode";
+export { default as AnimatedScan } from "./animations/AnimatedScan";
+export { default as AnimatedArchive } from "./animations/AnimatedArchive";
+export { default as AnimatedInbox } from "./animations/AnimatedInbox";
+export { default as AnimatedOutbox } from "./animations/AnimatedOutbox";
+export { default as AnimatedBellRing } from "./animations/AnimatedBellRing";
+export { default as AnimatedBellOff } from "./animations/AnimatedBellOff";
+export { default as AnimatedBookmarkCheck } from "./animations/AnimatedBookmarkCheck";

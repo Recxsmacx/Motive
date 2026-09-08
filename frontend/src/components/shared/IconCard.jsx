@@ -5,8 +5,10 @@ import { isIconNew } from "@/registry/iconRegistry";
 
 function IconCard({ icon, onClick, index = 0, color }) {
   const [hover, setHover] = useState(false);
-  const Comp = icon.component;
+  const Comp = icon?.component;
   const isNew = isIconNew(icon);
+
+  if (!Comp) return null;
 
   return (
     <motion.button
